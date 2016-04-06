@@ -104,16 +104,9 @@ window.onload = function init()
     } );
     
     // Atburðafall fyrir lyklaborð
-     window.addEventListener("keydown", function(e){
-         switch( e.keyCode ) {
-            case 38:	// upp ör
-                zView += 0.2;
-                break;
-            case 40:	// niður ör
-                zView -= 0.2;
-                break;
-         }
-     }  );  
+    window.addEventListener("keydown", handleKeydown);
+    window.addEventListener("keyup", handleKeyup);
+ 
 
     // Atburðafall fyri músarhjól
      window.addEventListener("mousewheel", function(e){
