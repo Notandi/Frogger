@@ -31,7 +31,7 @@ _players   : [],
 _cars : [],
 _logs : [],
 _turtles : [],
-_flies : [];
+_flies : [],
 
 
 // "PRIVATE" METHODS

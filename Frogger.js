@@ -205,25 +205,5 @@ function updateSimulation(du){
     entityManager.update(du);
 };
 function renderSimulation(gl){
-    /*gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
-    var mv = lookAt( vec3(0.0, 1.0, zView), vec3(0.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0) );
-    mv = mult( mv, rotateX(spinX) );
-    mv = mult( mv, rotateY(spinY) );
-
-    rotWing += incWing;
-    if( rotWing > 35.0  || rotWing < -85.0 )
-        incWing *= -1;
-    
-    // Teikna einn væng
-    var mv1 = mult( mv, rotateZ( rotWing ) );
-    gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
-    gl.drawArrays( gl.TRIANGLE_FAN, 0, NumVertices );
-
-    // Teikna hinn vænginn (speglaðann)
-    var mv2 = mult( mv, rotateZ( -rotWing ) );
-    mv2 = mult( mv2, scalem( -1.0, 1.0, 1.0 ) );
-    gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
-    gl.drawArrays( gl.TRIANGLE_FAN, 0, NumVertices );*/
     entityManager.render(gl);
 };
