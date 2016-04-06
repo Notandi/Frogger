@@ -76,10 +76,6 @@ render: function(gl) {
 
         var aCategory = this._categories[c];
 
-        if (!this._bShowRocks && 
-            aCategory == this._rocks)
-            continue;
-
         for (var i = 0; i < aCategory.length; ++i) {
 
             aCategory[i].render(gl);
