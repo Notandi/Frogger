@@ -27,7 +27,10 @@ var entityManager = {
 
 // "PRIVATE" DATA
 
-_butterflies   : [],
+_players   : [],
+_cars : [],
+_logs : [],
+_turtles : [],
 
 
 // "PRIVATE" METHODS
