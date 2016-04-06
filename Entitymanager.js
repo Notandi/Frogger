@@ -42,17 +42,29 @@ _turtles : [],
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._butterflies];
+    this._categories = [this._players,this._cars, this._logs, this._turtles];
 },
 
 init: function() {
-    for (var i = 0; i < 10; i++){
-        this.generateButterflies();
-    }
+    this.generatePlayers();
+    this.generateCars();
+    this.generateLogs();
+    this.generateTurtles();
+
 },
 
-generateButterflies : function() {
-    this._butterflies.push(new Butterfly);
+generatePlayers : function() {
+    this._players.push(new Player());
+},
+generateCars : function() {
+    this._cars.push(new Car());
+},
+generateLogs : function() {
+    this._logs.push(new Log());
+
+},
+generateTurtles : function() {
+    this._turtles.push(new Turtle());
 },
 
 update: function(du) {
