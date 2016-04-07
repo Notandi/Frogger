@@ -1,31 +1,6 @@
-/////////////////////////////////////////////////////////////////
-//    Sýnidæmi í Tölvugrafík
-//     Fiðrildi sem blakar vængjunum.  Hægt er að snúa með
-//     músinni og færa til með upp- og niður-örvum (eða
-//     músarhjóli).
-//
-//    Hjálmtýr Hafsteinsson, febrúar 2016
-/////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
 
-var NumVertices  = 4;
-
-// Hnútar eins vængs sem liggur í xz-planinu
-var vertices = [
-    vec4( 0.0, 0.0, -0.5, 1.0 ),
-    vec4( 0.75,  0.0, -1.0, 1.0 ),
-    vec4( 0.5,  0.0,  0.5, 1.0 ),
-    vec4( 0.0, 0.0, 0.0, 1.0 )
-];
-
-// Litir hnútanna
-var colors = [
-    vec4( 1.0, 0.2, 0.0, 1.0 ),  // appelsínugulur
-    vec4( 0.8, 0.2, 1.0, 1.0 ),  // fjólublár
-    vec4( 1.0, 0.7, 0.3, 1.0 ),  // ljós appelsínugulur
-    vec4( 1.0, 0.2, 0.0, 1.0 )   // appelsínugulur
-];
 
 var movement = false;     // Er músarhnappur niðri?
 var spinX = 0;
@@ -33,53 +8,77 @@ var spinY = 0;
 var origX;
 var origY;
 
-var rotWing = 0.0;        // Snúningshorn vængjanna
-var incWing = 2.0;        // Breyting á snúningshorni
+
 
 var zView = -4.0;         // Staðsetning áhorfanda í z-hniti
 
 var proLoc;
 var mvLoc;
 
+var playerVertices = [];
+var carVertices = [];
+var logVertices = [];
+var flyVertices = [];
+var turtleVertices = [];
 
 window.onload = function init()
 {
-    canvas = document.getElementById( "gl-canvas" );
+   canvas = document.getElementById( "gl-canvas" );
     
     gl = WebGLUtils.setupWebGL( canvas );
     if ( !gl ) { alert( "WebGL isn't available" ); }
 
     gl.viewport( 0, 0, canvas.width, canvas.height );
-    gl.clearColor( 0.9, 1.0, 1.0, 1.0 );
+    gl.clearColor( 0.7, 1.0, 0.7, 1.0 );
     
+    gl.enable(gl.DEPTH_TEST);
+
     //
     //  Load shaders and initialize attribute buffers
     //
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
     
-    var cBuffer = gl.createBuffer();
-    gl.bindBuffer( gl.ARRAY_BUFFER, cBuffer );
-    gl.bufferData( gl.ARRAY_BUFFER, flatten(colors), gl.STATIC_DRAW );
+    
+    // VBO for the player(frog)
+    playerBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, playerBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(playerVertices), gl.STATIC_DRAW );
+    
+    // VBO for the car
+    carBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, carBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(carVertices), gl.STATIC_DRAW );
+    
+    // VBO for the log
+    logBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, logBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(logVertices), gl.STATIC_DRAW );
 
-    var vColor = gl.getAttribLocation( program, "vColor" );
-    gl.vertexAttribPointer( vColor, 4, gl.FLOAT, false, 0, 0 );
-    gl.enableVertexAttribArray( vColor );
+    // VBO for the fly
+    flyBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, flyBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(flyVertices), gl.STATIC_DRAW );
 
-    var vBuffer = gl.createBuffer();
-    gl.bindBuffer( gl.ARRAY_BUFFER, vBuffer );
-    gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
+    // VBO for the turtle
+    turtleBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, turtleBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(turtleVertices), gl.STATIC_DRAW );
 
-    var vPosition = gl.getAttribLocation( program, "vPosition" );
-    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
+
+    vPosition = gl.getAttribLocation( program, "vPosition" );
+    gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
 
-    proLoc = gl.getUniformLocation( program, "projection" );
+    colorLoc = gl.getUniformLocation( program, "vColor" );
+    
     mvLoc = gl.getUniformLocation( program, "modelview" );
 
-    // Setjum ofanvarpsfylki hér í upphafi
-    var proj = perspective( 90.0, 1.0, 0.2, 100.0 );
-    gl.uniformMatrix4fv(proLoc, false, flatten(proj));
+    // set projection
+    pLoc = gl.getUniformLocation( program, "projection" );
+    proj = perspective( 50.0, 1.0, 1.0, 500.0 );
+    gl.uniformMatrix4fv(pLoc, false, flatten(proj));
+
     
 
     // Atburðaföll fyrir mús
@@ -198,5 +197,6 @@ function updateSimulation(du){
     entityManager.update(du);
 };
 function renderSimulation(gl){
+    gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     entityManager.render(gl);
 };
