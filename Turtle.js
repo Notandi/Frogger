@@ -5,7 +5,7 @@ Turtle.prototype.update = function(du){
 	//console.log("turtle");
 };
 Turtle.prototype.render = function(gl){
-	//setju upp sjónarhornið 
+	//setja upp sjónarhornið 
 	var mv = lookAt( vec3(0.0, 1.0, zView), vec3(0.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0) );
     mv = mult( mv, rotateX(spinX) );
     mv = mult( mv, rotateY(spinY) );
