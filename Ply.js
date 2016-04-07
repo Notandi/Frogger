@@ -1,31 +1,28 @@
 function Ply(){
-	
+	this.colorCube();
 }
 
 Ply.prototype.points = [];
 
 Ply.prototype.getPlayer = function(){
 	//console.log("playervert");
-	return [];
+	return this.points;
 };
 Ply.prototype.getCar = function(){
 	//console.log("carvert");
-	return [vec4( 0.0, 0.0, -0.5, 1.0 ),
-    vec4( 0.75,  0.0, -1.0, 1.0 ),
-    vec4( 0.5,  0.0,  0.5, 1.0 ),
-    vec4( 0.0, 0.0, 0.0, 1.0 )];
+	return this.points;
 };
 Ply.prototype.getLog = function(){
 	//console.log("logvert");
-	return [];
+	return this.points;
 };
 Ply.prototype.getFly = function(){
 	//console.log("flyvert");
-	return [];
+	return this.points;
 };
 Ply.prototype.getTurtle = function(){
 	//console.log("turtlevert");
-	return [];
+	return this.points;
 };
 
 Ply.prototype.quad = function(a, b, c, d) 
@@ -72,10 +69,10 @@ Ply.prototype.quad = function(a, b, c, d)
 
 Ply.prototype.colorCube = function()
 {
-    quad( 1, 0, 3, 2 );
-    quad( 2, 3, 7, 6 );
-    quad( 3, 0, 4, 7 );
-    quad( 6, 5, 1, 2 );
-    quad( 4, 5, 6, 7 );
-    quad( 5, 4, 0, 1 );
+    this.quad( 1, 0, 3, 2 );
+    this.quad( 2, 3, 7, 6 );
+    this.quad( 3, 0, 4, 7 );
+    this.quad( 6, 5, 1, 2 );
+    this.quad( 4, 5, 6, 7 );
+    this.quad( 5, 4, 0, 1 );
 }
