@@ -31,6 +31,8 @@ var flyBuffer;
 var numFlyVertices;
 var turtleBuffer;
 var numTurtleVertices;
+var waterBuffer;
+var numWaterVertices;
 
 window.onload = function init()
 {
@@ -88,6 +90,12 @@ window.onload = function init()
     turtleBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, turtleBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(turtleVertices), gl.STATIC_DRAW );
+
+    var waterVertices = ply.getWater();
+    numWaterVertices = waterVertices.length;
+    waterBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, waterBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(playerVertices), gl.STATIC_DRAW );
 
 
     vPosition = gl.getAttribLocation( program, "vPosition" );

@@ -19,6 +19,10 @@ Ply.prototype.getFly = function(){
 Ply.prototype.getTurtle = function(){
 	return this.points;
 };
+Ply.prototype.getWater = function(){
+	return this.points;
+};
+
 
 Ply.prototype.quad = function(a, b, c, d) 
 {
