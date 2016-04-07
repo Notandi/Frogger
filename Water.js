@@ -13,7 +13,9 @@ Water.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
-    mv1 = mult(mv1, translate(2.0, 1.0, 1.0));
+    mv1 = mult(mv1, translate(0.0, -0.6, 10.0));
+    mv1 = mult(mv1, scalem( 5.5, 0.1, 5 ));
+
 
     gl.uniform4fv( colorLoc, vec4(0.0, 0.0, 1.0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, waterBuffer );
