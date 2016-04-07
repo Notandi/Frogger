@@ -20,11 +20,12 @@ var carVertices = [];
 var logVertices = [];
 var flyVertices = [];
 var turtleVertices = [];
-var ply = new Ply();
 
 window.onload = function init()
 {
    canvas = document.getElementById( "gl-canvas" );
+   var ply = new Ply();
+
     
     gl = WebGLUtils.setupWebGL( canvas );
     if ( !gl ) { alert( "WebGL isn't available" ); }
