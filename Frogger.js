@@ -37,6 +37,7 @@ window.onload = function init()
 
     gl.viewport( 0, 0, canvas.width, canvas.height );
     gl.clearColor( 0.7, 1.0, 0.7, 1.0 );
+    // [ 0.0, 1.0, 0.0, 1.0 ],  // green
     
     gl.enable(gl.DEPTH_TEST);
 
@@ -197,15 +198,7 @@ main._requestNextIteration = function () {
 };
 
 main.init = function () {
-    
-    // Grabbing focus is good, but it sometimes screws up jsfiddle,
-    // so it's a risky option during "development"
-    //
-    //window.focus(true);
-
-    // We'll be working on a black background here,
-    // so let's use a fillStyle which works against that...
-    //
+  
 
     this._requestNextIteration();
 };

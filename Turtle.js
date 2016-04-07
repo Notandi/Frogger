@@ -13,7 +13,8 @@ Turtle.prototype.render = function(gl){
     // færa hlut
     var mv1 = mv;
 
-    gl.uniform4fv( colorLoc, vec4(0.4, 0.4, 0.4, 1.0) );
+    
+    gl.uniform4fv( colorLoc, vec4(0.0, 1.0, 0.0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, turtleBuffer );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
 
