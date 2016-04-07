@@ -5,23 +5,18 @@ function Ply(){
 Ply.prototype.points = [];
 
 Ply.prototype.getPlayer = function(){
-	//console.log("playervert");
 	return this.points;
 };
 Ply.prototype.getCar = function(){
-	//console.log("carvert");
 	return this.points;
 };
 Ply.prototype.getLog = function(){
-	//console.log("logvert");
 	return this.points;
 };
 Ply.prototype.getFly = function(){
-	//console.log("flyvert");
 	return this.points;
 };
 Ply.prototype.getTurtle = function(){
-	//console.log("turtlevert");
 	return this.points;
 };
 
@@ -36,17 +31,6 @@ Ply.prototype.quad = function(a, b, c, d)
         vec3( -0.5,  0.5, -0.5 ),
         vec3(  0.5,  0.5, -0.5 ),
         vec3(  0.5, -0.5, -0.5 )
-    ];
-
-    var vertexColors = [
-        [ 0.0, 0.0, 0.0, 1.0 ],  // black
-        [ 1.0, 0.0, 0.0, 1.0 ],  // red
-        [ 1.0, 1.0, 0.0, 1.0 ],  // yellow
-        [ 0.0, 1.0, 0.0, 1.0 ],  // green
-        [ 0.0, 0.0, 1.0, 1.0 ],  // blue
-        [ 1.0, 0.0, 1.0, 1.0 ],  // magenta
-        [ 0.0, 1.0, 1.0, 1.0 ],  // cyan
-        [ 1.0, 1.0, 1.0, 1.0 ]   // white
     ];
 
     // We need to partition the quad into two triangles in order for
