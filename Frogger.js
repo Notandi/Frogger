@@ -16,10 +16,15 @@ var proLoc;
 var mvLoc;
 
 var playerBuffer;
+var numPlayerVertices;
 var carBuffer;
+var numCarVertices;
 var logBuffer;
+var numLogVertices;
 var flyBuffer;
+var numFlyVertices;
 var turtleBuffer;
+var numTurtleVertices;
 
 window.onload = function init()
 {
@@ -44,30 +49,35 @@ window.onload = function init()
     
     // VBO for the player(frog)
     var playerVertices = ply.getPlayer();
+    numPlayerVertices = playerVertices.length;
     playerBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, playerBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(playerVertices), gl.STATIC_DRAW );
     
     // VBO for the car
     var carVertices = ply.getCar();
+    numCarVertices = carVertices.length;
     carBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, carBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(carVertices), gl.STATIC_DRAW );
     
     // VBO for the log
     var logVertices = ply.getLog();
+    numLogVertices = logVertices.length;
     logBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, logBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(logVertices), gl.STATIC_DRAW );
 
     // VBO for the fly
     var flyVertices = ply.getFly();
+    numFlyVertices = flyVertices.length;
     flyBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, flyBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(flyVertices), gl.STATIC_DRAW );
 
     // VBO for the turtle
     var turtleVertices = ply.getTurtle();
+    numTurtleVertices = turtleVertices.length;
     turtleBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, turtleBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(turtleVertices), gl.STATIC_DRAW );

@@ -7,7 +7,10 @@ Ply.prototype.getPlayer = function(){
 };
 Ply.prototype.getCar = function(){
 	//console.log("carvert");
-	return [];
+	return [vec4( 0.0, 0.0, -0.5, 1.0 ),
+    vec4( 0.75,  0.0, -1.0, 1.0 ),
+    vec4( 0.5,  0.0,  0.5, 1.0 ),
+    vec4( 0.0, 0.0, 0.0, 1.0 )];
 };
 Ply.prototype.getLog = function(){
 	//console.log("logvert");
