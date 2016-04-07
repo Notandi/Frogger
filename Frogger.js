@@ -43,7 +43,7 @@ window.onload = function init()
     
     
     // VBO for the player(frog)
-    var playerVertices = ply.getPLayer();
+    var playerVertices = ply.getPlayer();
     playerBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, playerBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(playerVertices), gl.STATIC_DRAW );
