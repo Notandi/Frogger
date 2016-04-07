@@ -13,6 +13,8 @@ Car.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
+    mv1 = mult(mv1, translate(0.0, -3.0, 0.0));
+
 
     gl.uniform4fv( colorLoc, vec4(1.0, 1.0, 0.0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, carBuffer );
