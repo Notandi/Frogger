@@ -1,11 +1,13 @@
 function Player(){
 	
 }
+
 Player.prototype.Key_forward = 'W'.charCodeAt(0) ;
 Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
 Player.prototype.Loc = vec3(0.0,0.0,0.0)
+
 Player.prototype.update = function(du){
 	if (eatKey(this.Key_forward)) {
         console.log("Virkar framm");
@@ -32,6 +34,7 @@ Player.prototype.update = function(du){
         xLooking -= 1.0;
     }
 };
+
 Player.prototype.render = function(gl){
 	//setja upp sjónarhornið 
 	var mv = lookAt( vec3(xView, yView, zView), vec3(xLooking, yLooking, zLooking), vec3(0.0, 1.0, 0.0) );
