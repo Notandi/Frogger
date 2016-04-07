@@ -1,10 +1,23 @@
 function Player(){
 	
 }
-
+Player.prototype.Key_forward = 'W'.charCodeAt(0) ;
+Player.prototype.Key_Backward = 'S'.charCodeAt(0);
+Player.prototype.Key_Left = 'A'.charCodeAt(0);
+Player.prototype.Key_Right = 'D'.charCodeAt(0);
 Player.prototype.update = function(du){
-	//console.log("player");
-
+	if (keys[this.Key_forward]) {
+        console.log("Virkar framm");
+    }
+    if (keys[this.Key_Backward]) {
+        console.log("Virkar aftur");
+    }
+    if (keys[this.Key_Left]) {
+        console.log("Virkar vinstri");
+    }
+    if (keys[this.Key_Right]) {
+        console.log("Virkar hægri");
+    }
 };
 Player.prototype.render = function(gl){
 	//setja upp sjónarhornið 

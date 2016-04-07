@@ -6,7 +6,6 @@ var keys = [];
 
 function handleKeydown(evt) {
     keys[evt.keyCode] = true;
-    console.log("einn");
 }
 
 function handleKeyup(evt) {
