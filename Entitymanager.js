@@ -33,7 +33,7 @@ _logs : [],
 _turtles : [],
 _flies : [],
 _water : [],
-
+_tarmac : [],
 
 // "PRIVATE" METHODS
 
@@ -44,7 +44,7 @@ _water : [],
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._players,this._cars, this._logs, this._turtles, this._flies, this._water];
+    this._categories = [this._players,this._cars, this._logs, this._turtles, this._flies, this._water, this._tarmac];
 },
 
 init: function() {
@@ -54,6 +54,7 @@ init: function() {
     this.generateTurtles();
     this.generateFlies();
     this.generateWater();
+    this.generateTarmac();
 
 },
 
@@ -75,6 +76,9 @@ generateFlies : function(){
 },
 generateWater : function() {
     this._water.push(new Water());
+},
+generateTarmac : function() {
+    this._tarmac.push(new Tarmac());
 },
 
 update: function(du) {
