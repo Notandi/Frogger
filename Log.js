@@ -13,11 +13,12 @@ Log.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
-    mv1 = mult(mv1, translate(1.0, 1.0, 1.0))
+    mv1 = mult(mv1, translate(1.0, 1.0, 1.0));
+    mv1 = mult(mv1, scalem( 1.25, 0.1, 0.4 ));
 
     //ctm = mult( ctm, translate(convertKm(1200), 0.0, 0.0))
 
-    gl.uniform4fv( colorLoc, vec4(0.0, 1.0, 0.0, 1.0 ) );
+    gl.uniform4fv( colorLoc, vec4(0.5, 0.5, 0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, logBuffer );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
 
