@@ -33,6 +33,8 @@ var turtleBuffer;
 var numTurtleVertices;
 var waterBuffer;
 var numWaterVertices;
+var tarmacBuffer;
+var numTarmacVertices;
 
 window.onload = function init()
 {
@@ -91,11 +93,19 @@ window.onload = function init()
     gl.bindBuffer( gl.ARRAY_BUFFER, turtleBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(turtleVertices), gl.STATIC_DRAW );
 
+    // VBO for water
     var waterVertices = ply.getWater();
     numWaterVertices = waterVertices.length;
     waterBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, waterBuffer );
-    gl.bufferData( gl.ARRAY_BUFFER, flatten(playerVertices), gl.STATIC_DRAW );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(waterVertices), gl.STATIC_DRAW );
+
+    // VBO for tarmac
+    var tarmacVertices = ply.getTarmac();
+    numTarmacVertices = tarmacVertices.length;
+    tarmacBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(tarmacVertices), gl.STATIC_DRAW );
 
 
     vPosition = gl.getAttribLocation( program, "vPosition" );

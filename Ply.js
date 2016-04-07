@@ -22,6 +22,9 @@ Ply.prototype.getTurtle = function(){
 Ply.prototype.getWater = function(){
 	return this.points;
 };
+Ply.prototype.getTarmac = function(){
+	return this.points;
+};
 
 
 Ply.prototype.quad = function(a, b, c, d) 
