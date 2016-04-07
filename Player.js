@@ -5,18 +5,23 @@ Player.prototype.Key_forward = 'W'.charCodeAt(0) ;
 Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
+Player.prototype.Loc = vec3(0.0,0.0,0.0)
 Player.prototype.update = function(du){
-	if (keys[this.Key_forward]) {
+	if (eatKey(this.Key_forward)) {
         console.log("Virkar framm");
+        this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
     }
-    if (keys[this.Key_Backward]) {
+    if (eatKey(this.Key_Backward)) {
         console.log("Virkar aftur");
+        this.Loc = add(this.Loc,vec3(0.0,0.0,-1.0))
     }
-    if (keys[this.Key_Left]) {
+    if (eatKey(this.Key_Left)) {
         console.log("Virkar vinstri");
+        this.Loc = add(this.Loc,vec3(1.0,0.0,0.0))
     }
-    if (keys[this.Key_Right]) {
+    if (eatKey(this.Key_Right)) {
         console.log("Virkar hægri");
+        this.Loc = add(this.Loc,vec3(-1.0,0.0,0.0))
     }
 };
 Player.prototype.render = function(gl){
@@ -27,6 +32,7 @@ Player.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
+    mv1 = mult(mv1, translate(this.Loc));
 
     gl.uniform4fv( colorLoc, vec4(0.4, 0.4, 0.4, 1.0) );
     gl.bindBuffer( gl.ARRAY_BUFFER, playerBuffer );
