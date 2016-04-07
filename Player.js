@@ -10,23 +10,31 @@ Player.prototype.update = function(du){
 	if (eatKey(this.Key_forward)) {
         console.log("Virkar framm");
         this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
+        zView += 1.0;
+        zLooking += 1.0;
     }
     if (eatKey(this.Key_Backward)) {
         console.log("Virkar aftur");
-        this.Loc = add(this.Loc,vec3(0.0,0.0,-1.0))
+        this.Loc = add(this.Loc,vec3(0.0,0.0,-1.0));
+        zView -= 1.0;
+        zLooking -= 1.0;
     }
     if (eatKey(this.Key_Left)) {
         console.log("Virkar vinstri");
-        this.Loc = add(this.Loc,vec3(1.0,0.0,0.0))
+        this.Loc = add(this.Loc,vec3(1.0,0.0,0.0));
+        xView += 1.0;
+        xLooking += 1.0;
     }
     if (eatKey(this.Key_Right)) {
         console.log("Virkar hægri");
-        this.Loc = add(this.Loc,vec3(-1.0,0.0,0.0))
+        this.Loc = add(this.Loc,vec3(-1.0,0.0,0.0));
+        xView -= 1.0;
+        xLooking -= 1.0;
     }
 };
 Player.prototype.render = function(gl){
 	//setja upp sjónarhornið 
-	var mv = lookAt( vec3(0.0, 1.0, zView), vec3(0.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0) );
+	var mv = lookAt( vec3(xView, yView, zView), vec3(xLooking, yLooking, zLooking), vec3(0.0, 1.0, 0.0) );
     mv = mult( mv, rotateX(spinX) );
     mv = mult( mv, rotateY(spinY) );
 
