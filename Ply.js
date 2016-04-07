@@ -1,7 +1,7 @@
 function Ply(){
 	
 }
-Ply.prototype.getPLayer = function(){
+Ply.prototype.getPlayer = function(){
 	//console.log("playervert");
 	return [];
 };
