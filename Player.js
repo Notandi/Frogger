@@ -34,7 +34,7 @@ Player.prototype.render = function(gl){
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.Loc));
 
-    gl.uniform4fv( colorLoc, vec4(0.4, 0.4, 0.4, 1.0) );
+    gl.uniform4fv( colorLoc, vec4(0.0, 1.0, 0.0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, playerBuffer );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
 
