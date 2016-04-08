@@ -1,5 +1,5 @@
-function Log(){
-	
+function Log(descr){
+	this.setup(descr);
 }
 
 Log.prototype.startLoc = 1.15;//vec3(1.15, -0.59, 6.0);
