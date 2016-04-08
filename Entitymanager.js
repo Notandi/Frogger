@@ -72,31 +72,31 @@ generateCars : function() {
     }));
     this._cars.push(new Car({
         loc : vec3(1.0,0.0,5.0),
-        time : 0.05
+        speed : 0.05
     }));
     this._cars.push(new Car({
         loc : vec3(2.0,0.0,1.0),
-        time : 0.1
+        speed : 0.1
     }));
     this._cars.push(new Car({
         loc : vec3(2.0,0.0,3.0),
-        time : 0.01
+        speed : 0.01
     }));
     this._cars.push(new Car({
         loc : vec3(2.0,0.0,5.0),
-        time : 0.05
+        speed : 0.05
     }));
     this._cars.push(new Car({
         loc : vec3(3.0,0.0,1.0),
-        time : 0.1
+        speed : 0.1
     }));
     this._cars.push(new Car({
         loc : vec3(3.0,0.0,3.0),
-        time : 0.01
+        speed : 0.01
     }));
     this._cars.push(new Car({
         loc : vec3(3.0,0.0,5.0),
-        time : 0.05
+        speed : 0.05
     }));
 },
 generateLogs : function() {
