@@ -22,6 +22,12 @@ Car.prototype.setup = function (descr) {
         this[property] = descr[property];
     };
 };
+Car.prototype.getX = function (){
+	return this.loc[0];
+};
+Car.prototype.getZ = function (){
+	return this.loc[2];
+};
 Car.prototype.render = function(gl){
 	//setja upp sjónarhornið 
 	var mv = lookAt( eye, at, vec3(0.0, 1.0, 0.0) );

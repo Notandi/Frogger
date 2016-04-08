@@ -9,6 +9,11 @@ Player.prototype.Key_Right = 'D'.charCodeAt(0);
 Player.prototype.Loc = vec3(0.0,0.0,0.0)
 
 Player.prototype.update = function(du){
+	if (entityManager.collision(this.Loc[0],this.Loc[2])){
+		this.Loc = vec3(0.0,0.0,0.0);
+		at = vec3(0.0,0.0,0.0);
+		eye = vec3(0.0,1.0,-4.0);	
+	} 
 	if (eatKey(this.Key_forward)) {
         this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
         eye[2] += 1.0;
@@ -29,6 +34,7 @@ Player.prototype.update = function(du){
         eye[0] -= 1.0;
         at[0] -= 1.0;
     }
+
 };
 
 Player.prototype.render = function(gl){

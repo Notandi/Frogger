@@ -130,6 +130,23 @@ generateCars : function() {
 
     
 },
+collision : function(x,z){
+    for (var c = 1; c < 2; ++c) {
+
+        var aCategory = this._categories[c];
+        var i = 0;
+
+        for (var i = 0; i < aCategory.length; ++i) {
+
+            var colx = Math.ceil(aCategory[i].getX());
+            var colx2 = Math.floor(aCategory[i].getX());
+            var colz = Math.ceil(aCategory[i].getZ());
+            if ((colx == x && colz == z )||(colx2 == x && colz == z )){
+                return true;
+            }
+        }
+    }
+},
 generateLogs : function() {
     this._logs.push(new Log());
 
