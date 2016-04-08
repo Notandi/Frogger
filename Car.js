@@ -1,13 +1,16 @@
-function Car(){
-	
+function Car(loc,time){
+	this.loc = loc;
+	this.time = time;
 }
 
 Car.prototype.startLoc = vec3(1.25, -0.4, 1.0);
 Car.prototype.endLoc = vec3(-12.25, -0.4, 1.0);
 Car.prototype.loc;
+Car.prototype.time;
 
 Car.prototype.update = function(du){
 	//console.log("car");
+	console.log(time)
 
 };
 Car.prototype.render = function(gl){

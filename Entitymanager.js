@@ -62,7 +62,41 @@ generatePlayers : function() {
     this._players.push(new Player());
 },
 generateCars : function() {
-    this._cars.push(new Car());
+    var loc = vec3(1.0,0.0,1.0);
+    var time = 100;
+    this._cars.push(new Car(loc,time));/*
+    this._cars.push(new Car({
+        loc : vec3(1.0,0.0,3.0),
+        time : 100
+    }));
+    this._cars.push(new Car({
+        loc : vec3(1.0,0.0,5.0),
+        time : 100
+    }));
+    this._cars.push(new Car({
+        loc : vec3(2.0,0.0,1.0),
+        time : 200
+    }));
+    this._cars.push(new Car({
+        loc : vec3(2.0,0.0,3.0),
+        time : 200
+    }));
+    this._cars.push(new Car({
+        loc : vec3(2.0,0.0,5.0),
+        time : 200
+    }));
+    this._cars.push(new Car({
+        loc : vec3(3.0,0.0,1.0),
+        time : 300
+    }));
+    this._cars.push(new Car({
+        loc : vec3(3.0,0.0,3.0),
+        time : 300
+    }));
+    this._cars.push(new Car({
+        loc : vec3(3.0,0.0,5.0),
+        time : 300
+    }));*/
 },
 generateLogs : function() {
     this._logs.push(new Log());
