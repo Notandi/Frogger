@@ -42,6 +42,11 @@ Player.prototype.update = function(du){
     this.Loc = add(this.Loc,vec3(this.extraspeed*du,0.0,0.0));
     eye[0] += this.extraspeed*du;
     at[0] += this.extraspeed*du;
+    if((this.Loc[2] > 6) && (this.extraspeed == 0.0)){
+    	this.Loc = vec3(0.0,0.0,0.0);
+		at = vec3(0.0,0.0,0.0);
+		eye = vec3(0.0,1.0,-4.0);
+    }
 
 };
 
