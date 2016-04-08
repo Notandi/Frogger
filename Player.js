@@ -41,7 +41,7 @@ Player.prototype.render = function(gl){
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.Loc));
     mv1 = mult(mv1, scalem(0.5, 0.25, 0.5));
-    //mv1 = mult(mv1, translate(1, 0, 0));
+    mv1 = mult(mv1, translate(0.0, -1.7, 0.0));
 
     gl.uniform4fv( colorLoc, vec4(0.0, 1.0, 0.0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, playerBuffer );
