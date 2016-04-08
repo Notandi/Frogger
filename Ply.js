@@ -26,6 +26,10 @@ Ply.prototype.getWater = function(){
 Ply.prototype.getTarmac = function(){
 	return this.points;
 };
+Ply.prototype.getFinishSlot = function(){
+	return this.points;
+};
+
 
 
 Ply.prototype.quad = function(a, b, c, d) 

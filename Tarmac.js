@@ -25,7 +25,7 @@ Tarmac.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
-    mv1 = mult(mv1, translate(this.loc));//Á EFTIR AÐ FÍNPÚSSA
+    mv1 = mult(mv1, translate(this.loc));
     mv1 = mult(mv1, scalem(this.scale));
 
 

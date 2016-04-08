@@ -103,6 +103,14 @@ window.onload = function init()
     gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(tarmacVertices), gl.STATIC_DRAW );
 
+    // VBO for finish slot
+    var finishSlotVertices = ply.getFinishSlot();
+    numFinishSlotVertices = finishSlotVertices.length;
+    finishSlotBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, finishSlotBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(finishSlotVertices), gl.STATIC_DRAW );
+
+
 
     vPosition = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );

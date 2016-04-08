@@ -34,6 +34,7 @@ _turtles : [],
 _flies : [],
 _water : [],
 _tarmac : [],
+_finishSlots : [],
 
 // "PRIVATE" METHODS
 
@@ -44,7 +45,7 @@ _tarmac : [],
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._players,this._cars, this._logs, this._turtles, this._flies, this._water, this._tarmac];
+    this._categories = [this._players,this._cars, this._logs, this._turtles, this._flies, this._water, this._tarmac, this._finishSlots];
 },
 
 init: function() {
@@ -55,6 +56,7 @@ init: function() {
     this.generateFlies();
     this.generateWater();
     this.generateTarmac();
+    this.generateFinishSlots();
 
 },
 
@@ -290,6 +292,31 @@ generateTarmac : function() {
 
 },
 
+generateFinishSlots : function() {
+    console.log("Generated finish slot");
+    //Leftmost finish slot
+    this._finishSlots.push(new FinishSlot({
+        loc : vec3(-1.0, -0.4, 12.0),
+        scale : vec3(0.5, 0.25, 0.5)
+    }));
+
+    this._finishSlots.push(new FinishSlot({
+        loc : vec3(-4.0, -0.4, 12.0),
+        scale : vec3(0.5, 0.25, 0.5)
+    }));
+
+    this._finishSlots.push(new FinishSlot({
+        loc : vec3(-7.0, -0.4, 12.0),
+        scale : vec3(0.5, 0.25, 0.5)
+    }));
+
+    this._finishSlots.push(new FinishSlot({
+        loc : vec3(-10.0, -0.4, 12.0),
+        scale : vec3(0.5, 0.25, 0.5)
+    }));
+
+},
+
 update: function(du) {
 
     for (var c = 0; c < this._categories.length; ++c) {
@@ -314,7 +341,6 @@ render: function(gl) {
         for (var i = 0; i < aCategory.length; ++i) {
 
             aCategory[i].render(gl);
-
         }
     }
 }
