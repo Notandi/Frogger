@@ -2,7 +2,8 @@ function Car(){
 	
 }
 
-Car.prototype.originalLoc = vec3(1.25, -0.4, 1.0);
+Car.prototype.startLoc = vec3(1.25, -0.4, 1.0);
+Car.prototype.endLoc = vec3(-12.25, -0.4, 1.0);
 Car.prototype.loc;
 
 Car.prototype.update = function(du){
