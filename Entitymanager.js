@@ -128,6 +128,8 @@ generateCars : function() {
 
 
 
+
+
     
 },
 carcollision : function(x,xwidth,z, zwidth){
@@ -253,6 +255,22 @@ generateLogs : function() {
     this._logs.push(new Log({
         loc : vec3(-8.0,-0.59,9.0),
         speed : -0.1
+    }));
+
+     /*   Röð 5    */
+    this._logs.push(new Log({
+        loc : vec3(0.0,-0.59,10.0),
+        speed : 0.03
+    }));
+       
+    this._logs.push(new Log({
+        loc : vec3(-5.0,-0.59,10.0),
+        speed : 0.03
+    }));
+
+    this._logs.push(new Log({
+        loc : vec3(-8.0,-0.59,10.0),
+        speed : 0.03
     }));
 
 },
