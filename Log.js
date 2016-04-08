@@ -13,8 +13,8 @@ Log.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
-    mv1 = mult(mv1, translate(1.0, 1.0, 1.0));
-    mv1 = mult(mv1, scalem( 1.25, 0.1, 0.4 ));
+    mv1 = mult(mv1, translate(1.15, -0.59, 6.0));
+    mv1 = mult(mv1, scalem( 1.25, 0.1, 0.6 ));
 
     //ctm = mult( ctm, translate(convertKm(1200), 0.0, 0.0))
 
