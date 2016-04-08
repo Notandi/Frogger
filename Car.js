@@ -6,10 +6,14 @@ Car.prototype.startLoc = vec3(1.25, -0.4, 1.0);
 Car.prototype.endLoc = vec3(-12.25, -0.4, 1.0);
 Car.prototype.loc;
 Car.prototype.time;
+Car.prototype.clock;
+Car.prototype.speed;
 
 Car.prototype.update = function(du){
 	//console.log("car");
-	console.log(this.time)
+	console.log(this.time);
+    
+
 
 };
 Car.prototype.setup = function (descr) {

@@ -64,39 +64,39 @@ generatePlayers : function() {
 generateCars : function() {
     this._cars.push(new Car({
         loc : vec3(1.0,0.0,1.0),
-        time : 100
+        speed : 0.1
     }));
     this._cars.push(new Car({
         loc : vec3(1.0,0.0,3.0),
-        time : 100
+        speed : 0.01
     }));
     this._cars.push(new Car({
         loc : vec3(1.0,0.0,5.0),
-        time : 100
+        time : 0.05
     }));
     this._cars.push(new Car({
         loc : vec3(2.0,0.0,1.0),
-        time : 200
+        time : 0.1
     }));
     this._cars.push(new Car({
         loc : vec3(2.0,0.0,3.0),
-        time : 200
+        time : 0.01
     }));
     this._cars.push(new Car({
         loc : vec3(2.0,0.0,5.0),
-        time : 200
+        time : 0.05
     }));
     this._cars.push(new Car({
         loc : vec3(3.0,0.0,1.0),
-        time : 300
+        time : 0.1
     }));
     this._cars.push(new Car({
         loc : vec3(3.0,0.0,3.0),
-        time : 300
+        time : 0.01
     }));
     this._cars.push(new Car({
         loc : vec3(3.0,0.0,5.0),
-        time : 300
+        time : 0.05
     }));
 },
 generateLogs : function() {
