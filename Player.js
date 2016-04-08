@@ -7,9 +7,12 @@ Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
 Player.prototype.Loc = vec3(0.0,0.0,0.0)
+Player.prototype.xwidth = 0.25;
+Player.prototype.zwidth = 0.25;
+Player.prototype.speed = 0.1;
 
 Player.prototype.update = function(du){
-	if (entityManager.collision(this.Loc[0],this.Loc[2])){
+	if (entityManager.carcollision(this.Loc[0],this.xwidth,this.Loc[2],this.zwidth)){
 		this.Loc = vec3(0.0,0.0,0.0);
 		at = vec3(0.0,0.0,0.0);
 		eye = vec3(0.0,1.0,-4.0);	
@@ -24,15 +27,15 @@ Player.prototype.update = function(du){
         eye[2] -= 1.0;
         at[2] -= 1.0;
     }
-    if (eatKey(this.Key_Left)) {
-        this.Loc = add(this.Loc,vec3(1.0,0.0,0.0));
-        eye[0] += 1.0;
-        at[0] += 1.0;
+    if (keys[this.Key_Left]) {
+        this.Loc = add(this.Loc,vec3(this.speed*du,0.0,0.0));
+        eye[0] += this.speed*du;
+        at[0] += this.speed*du;
     }
-    if (eatKey(this.Key_Right)) {
-        this.Loc = add(this.Loc,vec3(-1.0,0.0,0.0));
-        eye[0] -= 1.0;
-        at[0] -= 1.0;
+    if (keys[this.Key_Right]) {
+        this.Loc = add(this.Loc,vec3(-(this.speed*du),0.0,0.0));
+        eye[0] -= this.speed*du;
+        at[0] -= this.speed*du;
     }
 
 };

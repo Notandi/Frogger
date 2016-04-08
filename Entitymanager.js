@@ -130,7 +130,7 @@ generateCars : function() {
 
     
 },
-collision : function(x,z){
+carcollision : function(x,xwidth,z, zwidth){
     for (var c = 1; c < 2; ++c) {
 
         var aCategory = this._categories[c];
@@ -138,11 +138,24 @@ collision : function(x,z){
 
         for (var i = 0; i < aCategory.length; ++i) {
 
-            var colx = Math.ceil(aCategory[i].getX());
-            var colx2 = Math.floor(aCategory[i].getX());
-            var colz = Math.ceil(aCategory[i].getZ());
-            if ((colx == x && colz == z )||(colx2 == x && colz == z )){
-                return true;
+            var xloc = aCategory[i].getX();
+            var zloc = aCategory[i].getZ();
+            var xlocwidth = aCategory[i].getXwidth();
+            var zlocwidth = aCategory[i].getZwidth();
+            if (((xloc + xlocwidth > x + xwidth)
+                && (xloc - xlocwidth < x + xwidth))
+                || 
+                ((xloc + xlocwidth > x - xwidth)
+                && (xloc - xlocwidth < x - xwidth))){
+
+                if(((zloc + zlocwidth > z + zwidth)
+                    && (zloc - zlocwidth < z + zwidth))
+                    ||
+                    ((zloc + zlocwidth > z - zwidth)
+                    && (zloc - zlocwidth < z - zwidth))){
+
+                    return true;
+                }
             }
         }
     }
