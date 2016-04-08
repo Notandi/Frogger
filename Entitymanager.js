@@ -273,6 +273,22 @@ generateLogs : function() {
         speed : 0.03
     }));
 
+       /*   Röð 6    */
+    this._logs.push(new Log({
+        loc : vec3(0.0,-0.59,11.0),
+        speed : -0.06
+    }));
+       
+    this._logs.push(new Log({
+        loc : vec3(-5.0,-0.59,11.0),
+        speed : -0.06
+    }));
+
+    this._logs.push(new Log({
+        loc : vec3(-8.0,-0.59,11.0),
+        speed : -0.06
+    }));
+
 },
 generateTurtles : function() {
     this._turtles.push(new Turtle());
