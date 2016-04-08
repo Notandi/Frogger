@@ -160,6 +160,37 @@ carcollision : function(x,xwidth,z, zwidth){
         }
     }
 },
+logcollision : function(x,xwidth,z, zwidth){
+    for (var c = 2; c < 3; ++c) {
+
+        var aCategory = this._categories[c];
+        var i = 0;
+
+        for (var i = 0; i < aCategory.length; ++i) {
+
+            var xloc = aCategory[i].getX();
+            var zloc = aCategory[i].getZ();
+            var xlocwidth = aCategory[i].getXwidth();
+            var zlocwidth = aCategory[i].getZwidth();
+            if (((xloc + xlocwidth > x + xwidth)
+                && (xloc - xlocwidth < x + xwidth))
+                || 
+                ((xloc + xlocwidth > x - xwidth)
+                && (xloc - xlocwidth < x - xwidth))){
+
+                if(((zloc + zlocwidth > z + zwidth)
+                    && (zloc - zlocwidth < z + zwidth))
+                    ||
+                    ((zloc + zlocwidth > z - zwidth)
+                    && (zloc - zlocwidth < z - zwidth))){
+
+                    return -aCategory[i].getSpeed();
+                }
+            }
+        }
+        return 0.0;
+    }
+},
 generateLogs : function() {
        /*   Röð 1    */
 
