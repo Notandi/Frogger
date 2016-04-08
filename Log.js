@@ -6,8 +6,8 @@ Log.prototype.startLoc = 1.15;//vec3(1.15, -0.59, 6.0);
 Log.prototype.endLoc = -12.15;//vec3(-12.15, -0.59, 6.0);
 Log.prototype.loc;
 Log.prototype.speed;
-Log.prototype.xwidth = 1.5/2.0;
-Log.prototype.zwidth = 1.0/2.0;
+Log.prototype.xwidth = 1.25/2.0;
+Log.prototype.zwidth = 0.6/2.0;
 
 
 Log.prototype.getSpeed = function(){
