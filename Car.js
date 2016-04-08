@@ -17,6 +17,9 @@ Car.prototype.update = function(du){
     if (this.loc[0] < this.endLoc){
     	this.loc[0] = this.startLoc;
     }
+    if (this.loc[0] > this.startLoc){
+    	this.loc[0] = this.endLoc;
+    }
 
 };
 Car.prototype.setup = function (descr) {

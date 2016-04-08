@@ -67,30 +67,30 @@ generateCars : function() {
 
     this._cars.push(new Car({
         loc : vec3(0.0,-0.4,1.0),
-        speed : 0.1
+        speed : 0.03
     }));
     this._cars.push(new Car({
         loc : vec3(-5.0,-0.4,1.0),
-        speed : 0.1
+        speed : 0.03
     }));
     this._cars.push(new Car({
         loc : vec3(-8.0,-0.4,1.0),
-        speed : 0.1
+        speed : 0.03
     }));
 
      /*   Röð 2    */
 
        this._cars.push(new Car({
         loc : vec3(0.0,-0.4,2.0),
-        speed : 0.02
+        speed : -0.02
     }));
     this._cars.push(new Car({
         loc : vec3(-5.0,-0.4,2.0),
-        speed : 0.02
+        speed : -0.02
     }));
     this._cars.push(new Car({
         loc : vec3(-8.0,-0.4,2.0),
-        speed : 0.02
+        speed : -0.02
     }));
 
     /*   Röð 3    */
@@ -113,17 +113,17 @@ generateCars : function() {
     /*   Röð 4    */
     this._cars.push(new Car({
         loc : vec3(0.0,-0.4,4.0),
-        speed : 0.03
+        speed : -0.1
     }));
        
     this._cars.push(new Car({
         loc : vec3(-5.0,-0.4,4.0),
-        speed : 0.03
+        speed : -0.1
     }));
 
     this._cars.push(new Car({
         loc : vec3(-8.0,-0.4,4.0),
-        speed : 0.03
+        speed : -0.1
     }));
 
 
