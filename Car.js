@@ -1,6 +1,5 @@
-function Car(loc,time){
-	this.loc = loc;
-	this.time = time;
+function Car(descr){
+	this.setup(descr);
 }
 
 Car.prototype.startLoc = vec3(1.25, -0.4, 1.0);
@@ -10,8 +9,13 @@ Car.prototype.time;
 
 Car.prototype.update = function(du){
 	//console.log("car");
-	console.log(time)
+	console.log(this.time)
 
+};
+Car.prototype.setup = function (descr) {
+    for (var property in descr) {
+        this[property] = descr[property];
+    };
 };
 Car.prototype.render = function(gl){
 	//setja upp sjónarhornið 
