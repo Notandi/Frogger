@@ -3,7 +3,7 @@ function Log(descr){
 }
 
 Log.prototype.startLoc = 1.15;//vec3(1.15, -0.59, 6.0);
-Log.prototype.endLoc = -12.25;//vec3(-12.15, -0.59, 6.0);
+Log.prototype.endLoc = -12.15;//vec3(-12.15, -0.59, 6.0);
 Log.prototype.loc;
 Log.prototype.speed;
 Log.prototype.xwidth = 1.5/2.0;
