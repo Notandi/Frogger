@@ -11,7 +11,7 @@ Car.prototype.zwidth = 1.0/2.0;
 
 Car.prototype.update = function(du){
 	//console.log("car");
-	console.log(this.time);
+	//console.log(this.time);
     var dist = vec3(-this.speed*du,0.0,0.0);
     this.loc = add(this.loc, dist);
     if (this.loc[0] < this.endLoc){

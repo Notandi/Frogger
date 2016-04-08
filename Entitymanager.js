@@ -49,7 +49,7 @@ deferredSetup : function () {
 
 init: function() {
     this.generatePlayers();
-    //this.generateCars();
+    this.generateCars();
     this.generateLogs();
     this.generateTurtles();
     this.generateFlies();
@@ -125,11 +125,6 @@ generateCars : function() {
         loc : vec3(-8.0,-0.4,4.0),
         speed : -0.1
     }));
-
-
-
-
-
     
 },
 carcollision : function(x,xwidth,z, zwidth){
@@ -280,7 +275,19 @@ generateWater : function() {
     this._water.push(new Water());
 },
 generateTarmac : function() {
-    this._tarmac.push(new Tarmac());
+    //Starting tarmac strip
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-5.5, -0.6, 2.5),
+        scale : vec3(12, 0.1, 6)
+    }));
+
+    //Finish line
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-5.5, -0.6, 12.0),
+        scale : vec3(12, 0.1, 1)
+    }));
+
+
 },
 
 update: function(du) {
