@@ -2,18 +2,19 @@ function Car(descr){
 	this.setup(descr);
 }
 
-Car.prototype.startLoc = vec3(1.25, -0.4, 1.0);
-Car.prototype.endLoc = vec3(-12.25, -0.4, 1.0);
+Car.prototype.startLoc = 1.25;//vec3(1.25, -0.4, 1.0);
+Car.prototype.endLoc = -12.25;//vec3(-12.25, -0.4, 1.0);
 Car.prototype.loc;
-Car.prototype.time;
-Car.prototype.clock;
 Car.prototype.speed;
 
 Car.prototype.update = function(du){
 	//console.log("car");
 	console.log(this.time);
-    
-
+    var dist = vec3(-this.speed*du,0.0,0.0);
+    this.loc = add(this.loc, dist);
+    if (this.loc[0] < this.endLoc){
+    	this.loc[0] = this.startLoc;
+    }
 
 };
 Car.prototype.setup = function (descr) {
