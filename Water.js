@@ -7,7 +7,7 @@ Water.prototype.update = function(du){
 };
 Water.prototype.render = function(gl){
 	//setja upp sjónarhornið 
-	var mv = lookAt( vec3(xView, yView, zView), vec3(xLooking, yLooking, zLooking), vec3(0.0, 1.0, 0.0) );
+	var mv = lookAt( eye, at, vec3(0.0, 1.0, 0.0) );
     mv = mult( mv, rotateX(spinX) );
     mv = mult( mv, rotateY(spinY) );
 

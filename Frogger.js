@@ -9,14 +9,8 @@ var origX;
 var origY;
 
 
-
-var zView = -4.0;         // Staðsetning áhorfanda í z-hniti
-var xView = 0.0;
-var yView = 1.0;
-
-var zLooking = 0.0;
-var xLooking = 0.0;
-var yLooking = 0.0;
+var eye = vec3(0.0,1.0,-4.0);
+var at = vec3(0.0,0.0,0.0);
 
 var proLoc;
 var mvLoc;

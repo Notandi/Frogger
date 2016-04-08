@@ -11,29 +11,29 @@ Player.prototype.Loc = vec3(0.0,0.0,0.0)
 Player.prototype.update = function(du){
 	if (eatKey(this.Key_forward)) {
         this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
-        zView += 1.0;
-        zLooking += 1.0;
+        eye[2] += 1.0;
+        at[2] += 1.0;
     }
     if (eatKey(this.Key_Backward)) {
         this.Loc = add(this.Loc,vec3(0.0,0.0,-1.0));
-        zView -= 1.0;
-        zLooking -= 1.0;
+        eye[2] -= 1.0;
+        at[2] -= 1.0;
     }
     if (eatKey(this.Key_Left)) {
         this.Loc = add(this.Loc,vec3(1.0,0.0,0.0));
-        xView += 1.0;
-        xLooking += 1.0;
+        eye[0] += 1.0;
+        at[0] += 1.0;
     }
     if (eatKey(this.Key_Right)) {
         this.Loc = add(this.Loc,vec3(-1.0,0.0,0.0));
-        xView -= 1.0;
-        xLooking -= 1.0;
+        eye[0] -= 1.0;
+        at[0] -= 1.0;
     }
 };
 
 Player.prototype.render = function(gl){
 	//setja upp sjónarhornið 
-	var mv = lookAt( vec3(xView, yView, zView), vec3(xLooking, yLooking, zLooking), vec3(0.0, 1.0, 0.0) );
+	var mv = lookAt( eye, at, vec3(0.0, 1.0, 0.0) );
     mv = mult( mv, rotateX(spinX) );
     mv = mult( mv, rotateY(spinY) );
 
