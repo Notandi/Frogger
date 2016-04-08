@@ -7,7 +7,7 @@ Car.prototype.endLoc = -12.25;//vec3(-12.25, -0.4, 1.0);
 Car.prototype.loc;
 Car.prototype.speed;
 Car.prototype.xwidth = 1.5/2.0;
-Car.prototype.ywidth = 1.0/2.0;
+Car.prototype.zwidth = 1.0/2.0;
 
 Car.prototype.update = function(du){
 	//console.log("car");
@@ -37,7 +37,7 @@ Car.prototype.getXwidth = function(){
 	return this.xwidth;
 };
 Car.prototype.getZwidth = function(){
-	return this.ywidth;
+	return this.zwidth;
 };
 
 Car.prototype.render = function(gl){

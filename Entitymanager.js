@@ -49,7 +49,7 @@ deferredSetup : function () {
 
 init: function() {
     this.generatePlayers();
-    this.generateCars();
+    //this.generateCars();
     this.generateLogs();
     this.generateTurtles();
     this.generateFlies();
@@ -161,7 +161,68 @@ carcollision : function(x,xwidth,z, zwidth){
     }
 },
 generateLogs : function() {
-    this._logs.push(new Log());
+       /*   Röð 1    */
+
+    this._logs.push(new Log({
+        loc : vec3(0.0,-0.4,6.0),
+        speed : 0.03
+    }));
+    this._logs.push(new Log({
+        loc : vec3(-5.0,-0.4,6.0),
+        speed : 0.03
+    }));
+    this._logs.push(new Log({
+        loc : vec3(-8.0,-0.4,6.0),
+        speed : 0.03
+    }));
+
+     /*   Röð 2    */
+
+       this._logs.push(new Log({
+        loc : vec3(0.0,-0.4,7.0),
+        speed : -0.02
+    }));
+    this._logs.push(new Log({
+        loc : vec3(-5.0,-0.4,7.0),
+        speed : -0.02
+    }));
+    this._logs.push(new Log({
+        loc : vec3(-8.0,-0.4,7.0),
+        speed : -0.02
+    }));
+
+    /*   Röð 3    */
+    this._logs.push(new Log({
+        loc : vec3(0.0,-0.4,8.0),
+        speed : 0.05
+    }));
+       
+    this._logs.push(new Log({
+        loc : vec3(-5.0,-0.4,8.0),
+        speed : 0.05
+    }));
+
+    this._logs.push(new Log({
+        loc : vec3(-8.0,-0.4,8.0),
+        speed : 0.05
+    }));
+
+
+    /*   Röð 4    */
+    this._logs.push(new Log({
+        loc : vec3(0.0,-0.4,9.0),
+        speed : -0.1
+    }));
+       
+    this._logs.push(new Log({
+        loc : vec3(-5.0,-0.4,9.0),
+        speed : -0.1
+    }));
+
+    this._logs.push(new Log({
+        loc : vec3(-8.0,-0.4,9.0),
+        speed : -0.1
+    }));
 
 },
 generateTurtles : function() {
