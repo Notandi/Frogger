@@ -63,39 +63,39 @@ generatePlayers : function() {
 },
 generateCars : function() {
     this._cars.push(new Car({
-        loc : vec3(1.0,0.0,1.0),
+        loc : vec3(-1.0,0.0,0.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(1.0,0.0,3.0),
+        loc : vec3(-1.0,0.0,2.0),
         speed : 0.01
     }));
     this._cars.push(new Car({
-        loc : vec3(1.0,0.0,5.0),
+        loc : vec3(-1.0,0.0,4.0),
         speed : 0.05
     }));
     this._cars.push(new Car({
-        loc : vec3(2.0,0.0,1.0),
+        loc : vec3(-4.0,0.0,0.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(2.0,0.0,3.0),
+        loc : vec3(-4.0,0.0,2.0),
         speed : 0.01
     }));
     this._cars.push(new Car({
-        loc : vec3(2.0,0.0,5.0),
+        loc : vec3(-4.0,0.0,4.0),
         speed : 0.05
     }));
     this._cars.push(new Car({
-        loc : vec3(3.0,0.0,1.0),
+        loc : vec3(-7.0,0.0,0.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(3.0,0.0,3.0),
+        loc : vec3(-7.0,0.0,2.0),
         speed : 0.01
     }));
     this._cars.push(new Car({
-        loc : vec3(3.0,0.0,5.0),
+        loc : vec3(-7.0,0.0,4.0),
         speed : 0.05
     }));
 },

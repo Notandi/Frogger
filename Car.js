@@ -29,7 +29,7 @@ Car.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
-    mv1 = mult(mv1, translate(-12.25, -0.4, 1.0));
+    mv1 = mult(mv1, translate(this.loc));
     mv1 = mult(mv1, scalem( 1.5, 0.3, 0.6 ));
     //mv1 = mult(mv1, scalem( 1.25, 0.1, 0.4 ));
 
