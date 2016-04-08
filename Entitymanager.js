@@ -62,42 +62,32 @@ generatePlayers : function() {
     this._players.push(new Player());
 },
 generateCars : function() {
+    //1.25, -0.4, 1.0 - starting location after car reaches end
     this._cars.push(new Car({
-        loc : vec3(-1.0,0.0,0.0),
+        loc : vec3(-1.0,-0.4,1.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(-1.0,0.0,2.0),
+        loc : vec3(-1.0,-0.4,3.0),
         speed : 0.01
     }));
-    this._cars.push(new Car({
-        loc : vec3(-1.0,0.0,4.0),
-        speed : 0.05
-    }));
-    this._cars.push(new Car({
-        loc : vec3(-4.0,0.0,0.0),
+       this._cars.push(new Car({
+        loc : vec3(-4.0,-0.4,1.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(-4.0,0.0,2.0),
+        loc : vec3(-4.0,-0.4,3.0),
         speed : 0.01
     }));
     this._cars.push(new Car({
-        loc : vec3(-4.0,0.0,4.0),
-        speed : 0.05
-    }));
-    this._cars.push(new Car({
-        loc : vec3(-7.0,0.0,0.0),
+        loc : vec3(-7.0,-0.4,1.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(-7.0,0.0,2.0),
+        loc : vec3(-7.0,-0.4,3.0),
         speed : 0.01
     }));
-    this._cars.push(new Car({
-        loc : vec3(-7.0,0.0,4.0),
-        speed : 0.05
-    }));
+    
 },
 generateLogs : function() {
     this._logs.push(new Log());
