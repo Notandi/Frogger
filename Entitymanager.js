@@ -63,30 +63,71 @@ generatePlayers : function() {
 },
 generateCars : function() {
     //1.25, -0.4, 1.0 - starting location after car reaches end
+    /*   Röð 1    */
+
     this._cars.push(new Car({
-        loc : vec3(-1.0,-0.4,1.0),
+        loc : vec3(0.0,-0.4,1.0),
         speed : 0.1
     }));
     this._cars.push(new Car({
-        loc : vec3(-1.0,-0.4,3.0),
-        speed : 0.01
+        loc : vec3(-5.0,-0.4,1.0),
+        speed : 0.1
     }));
+    this._cars.push(new Car({
+        loc : vec3(-8.0,-0.4,1.0),
+        speed : 0.1
+    }));
+
+     /*   Röð 2    */
+
        this._cars.push(new Car({
-        loc : vec3(-4.0,-0.4,1.0),
-        speed : 0.1
+        loc : vec3(0.0,-0.4,2.0),
+        speed : 0.02
     }));
     this._cars.push(new Car({
-        loc : vec3(-4.0,-0.4,3.0),
-        speed : 0.01
+        loc : vec3(-5.0,-0.4,2.0),
+        speed : 0.02
     }));
     this._cars.push(new Car({
-        loc : vec3(-7.0,-0.4,1.0),
-        speed : 0.1
+        loc : vec3(-8.0,-0.4,2.0),
+        speed : 0.02
     }));
+
+    /*   Röð 3    */
     this._cars.push(new Car({
-        loc : vec3(-7.0,-0.4,3.0),
-        speed : 0.01
+        loc : vec3(0.0,-0.4,3.0),
+        speed : 0.05
     }));
+       
+    this._cars.push(new Car({
+        loc : vec3(-5.0,-0.4,3.0),
+        speed : 0.05
+    }));
+
+    this._cars.push(new Car({
+        loc : vec3(-8.0,-0.4,3.0),
+        speed : 0.05
+    }));
+
+
+    /*   Röð 4    */
+    this._cars.push(new Car({
+        loc : vec3(0.0,-0.4,4.0),
+        speed : 0.03
+    }));
+       
+    this._cars.push(new Car({
+        loc : vec3(-5.0,-0.4,4.0),
+        speed : 0.03
+    }));
+
+    this._cars.push(new Car({
+        loc : vec3(-8.0,-0.4,4.0),
+        speed : 0.03
+    }));
+
+
+
     
 },
 generateLogs : function() {
