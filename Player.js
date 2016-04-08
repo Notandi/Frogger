@@ -48,6 +48,6 @@ Player.prototype.render = function(gl){
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
-    gl.drawArrays( gl.TRIANGLE_STRIP, 0, numLogVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numPlayerVertices );
 
 };

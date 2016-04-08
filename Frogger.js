@@ -15,6 +15,7 @@ var at = vec3(0.0,0.0,0.0);
 var proLoc;
 var mvLoc;
 
+
 var playerBuffer;
 var numPlayerVertices;
 var carBuffer;
@@ -44,6 +45,7 @@ window.onload = function init()
     // [ 0.0, 1.0, 0.0, 1.0 ],  // green
     
     gl.enable(gl.DEPTH_TEST);
+
 
     //
     //  Load shaders and initialize attribute buffers
@@ -146,9 +148,9 @@ window.onload = function init()
     // Atburðafall fyri músarhjól
      window.addEventListener("mousewheel", function(e){
          if( e.wheelDelta > 0.0 ) {
-             zView += 0.2;
+             eye[2] += 0.2;
          } else {
-             zView -= 0.2;
+             eye[2] -= 0.2;
          }
      }  );  
 

@@ -1,7 +1,8 @@
 function Ply(){
 	this.colorCube();
+	this.PR = PlyReader();
 }
-
+Ply.prototype.PR;
 Ply.prototype.points = [];
 
 Ply.prototype.getPlayer = function(){
