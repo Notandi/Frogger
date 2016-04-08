@@ -144,20 +144,10 @@ carcollision : function(x,xwidth,z, zwidth){
             var zloc = aCategory[i].getZ();
             var xlocwidth = aCategory[i].getXwidth();
             var zlocwidth = aCategory[i].getZwidth();
-            if (((xloc + xlocwidth > x + xwidth)
-                && (xloc - xlocwidth < x + xwidth))
+            if (((xloc + xlocwidth > x + xwidth)&& (xloc - xlocwidth < x + xwidth) && (zloc == z))
                 || 
-                ((xloc + xlocwidth > x - xwidth)
-                && (xloc - xlocwidth < x - xwidth))){
-
-                if(((zloc + zlocwidth > z + zwidth)
-                    && (zloc - zlocwidth < z + zwidth))
-                    ||
-                    ((zloc + zlocwidth > z - zwidth)
-                    && (zloc - zlocwidth < z - zwidth))){
-
-                    return true;
-                }
+                ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z)){
+                return true;
             }
         }
     }
@@ -172,22 +162,12 @@ logcollision : function(x,xwidth,z, zwidth){
 
             var xloc = aCategory[i].getX();
             var zloc = aCategory[i].getZ();
-            var xlocwidth = aCategory[i].getXwidth();
+            var xlocwidth = aCategory[i].getXwidth() - 0.2;
             var zlocwidth = aCategory[i].getZwidth();
-            if (((xloc + xlocwidth > x + xwidth)
-                && (xloc - xlocwidth < x + xwidth))
+            if (((xloc + xlocwidth > x + xwidth)&& (xloc - xlocwidth < x + xwidth) && (zloc == z))
                 || 
-                ((xloc + xlocwidth > x - xwidth)
-                && (xloc - xlocwidth < x - xwidth))){
-
-                if(((zloc + zlocwidth > z + zwidth)
-                    && (zloc - zlocwidth < z + zwidth))
-                    ||
-                    ((zloc + zlocwidth > z - zwidth)
-                    && (zloc - zlocwidth < z - zwidth))){
-
+                ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z)){
                     return -aCategory[i].getSpeed();
-                }
             }
         }
         return 0.0;
