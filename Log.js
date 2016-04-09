@@ -58,7 +58,7 @@ Log.prototype.render = function(gl){
     mv1 = mult(mv1, translate(this.loc));
     mv1 = mult(mv1, scalem( 1.25, 0.1, 0.6 ));
 
-    //ctm = mult( ctm, translate(convertKm(1200), 0.0, 0.0))
+    
 
     gl.uniform4fv( colorLoc, vec4(0.5, 0.5, 0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, logBuffer );

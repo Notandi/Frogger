@@ -14,7 +14,7 @@ Ply.prototype.getCar = function(){
     return plyData.points;
 };
 Ply.prototype.getLog = function(){
-	var plyData = this.PR.read("log.ply");
+	var plyData = this.PR.read("Log_pine.ply");
     return plyData.points;
 };
 Ply.prototype.getFly = function(){
