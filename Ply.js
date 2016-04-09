@@ -18,19 +18,24 @@ Ply.prototype.getLog = function(){
     return plyData.points;
 };
 Ply.prototype.getFly = function(){
-	return this.points;
+	var plyData = this.PR.read("cube.ply");
+    return plyData.points;
 };
 Ply.prototype.getTurtle = function(){
-	return this.points;
+	var plyData = this.PR.read("cube.ply");
+    return plyData.points;
 };
 Ply.prototype.getWater = function(){
-	return this.points;
+	var plyData = this.PR.read("cube.ply");
+    return plyData.points;
 };
 Ply.prototype.getTarmac = function(){
-	return this.points;
+	var plyData = this.PR.read("cube.ply");
+    return plyData.points;
 };
 Ply.prototype.getFinishSlot = function(){
-	return this.points;
+	var plyData = this.PR.read("cube.ply");
+    return plyData.points;
 };
 
 

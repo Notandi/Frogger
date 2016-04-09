@@ -48,13 +48,15 @@ FinishSlot.prototype.render = function(gl){
     // færa hlut
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.loc));
+        mv1 = mult(mv1, scalem(0.5,0.5,0.5));
+
     mv1 = mult(mv1, scalem(this.scale));
 
 
 
     gl.uniform4fv( colorLoc, this.color );
     gl.bindBuffer( gl.ARRAY_BUFFER, finishSlotBuffer );
-    gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLE_STRIP, 0, numFinishSlotVertices );
