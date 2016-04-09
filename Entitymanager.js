@@ -50,7 +50,7 @@ deferredSetup : function () {
 
 init: function() {
     this.generatePlayers();
-    //this.generateCars();
+    this.generateCars();
     this.generateLogs();
     this.generateTurtles();
     this.generateFlies();

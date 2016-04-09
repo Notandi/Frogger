@@ -62,7 +62,7 @@ Log.prototype.render = function(gl){
 
     gl.uniform4fv( colorLoc, vec4(0.5, 0.5, 0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, logBuffer );
-    gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLE_STRIP, 0, numLogVertices );

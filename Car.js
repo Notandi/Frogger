@@ -49,12 +49,12 @@ Car.prototype.render = function(gl){
     // færa hlut
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.loc));
-    mv1 = mult(mv1, scalem( 1.5, 0.3, 0.6 ));
+    mv1 = mult(mv1, scalem( 0.1, 0.1, 0.1 ));
     //mv1 = mult(mv1, scalem( 1.25, 0.1, 0.4 ));
 
     gl.uniform4fv( colorLoc, vec4(0.4, 0.4, 0.4, 1.0) );
     gl.bindBuffer( gl.ARRAY_BUFFER, carBuffer );
-    gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLE_STRIP, 0, numCarVertices );

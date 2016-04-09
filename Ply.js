@@ -6,13 +6,16 @@ Ply.prototype.PR;
 Ply.prototype.points = [];
 
 Ply.prototype.getPlayer = function(){
-	return this.points;
+    var plyData = this.PR.read("frog.ply");
+    return plyData.points;
 };
 Ply.prototype.getCar = function(){
-	return this.points;
+	var plyData = this.PR.read("car.ply");
+    return plyData.points;
 };
 Ply.prototype.getLog = function(){
-	return this.points;
+	var plyData = this.PR.read("log.ply");
+    return plyData.points;
 };
 Ply.prototype.getFly = function(){
 	return this.points;
