@@ -13,6 +13,14 @@ Player.prototype.zwidth = 0.25;
 Player.prototype.speed = 0.1;
 Player.prototype.extraspeed = 0.0;
 
+
+Player.prototype.respawn = function(){
+	this.Loc = vec3(0.0,0.0,0.0);
+	at = vec3(0.0,0.0,0.0);
+	eye = vec3(0.0,1.0,-4.0);
+};
+
+
 Player.prototype.update = function(du){
 	if (eatKey(this.Key_forward)) {
         this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
@@ -35,26 +43,22 @@ Player.prototype.update = function(du){
         at[0] -= this.speed*du;
     }
 	if (entityManager.surfaceCollision(1,this.Loc[0],this.xwidth,this.Loc[2],this.zwidth)){
-		this.Loc = vec3(0.0,0.0,0.0);
-		at = vec3(0.0,0.0,0.0);
-		eye = vec3(0.0,1.0,-4.0);	
+		this.respawn();	
 	}
 	this.extraspeed = entityManager.logcollision(this.Loc[0],this.xwidth,this.Loc[2],this.zwidth);
     this.Loc = add(this.Loc,vec3(this.extraspeed*du,0.0,0.0));
     eye[0] += this.extraspeed*du;
     at[0] += this.extraspeed*du;
     /*if((this.Loc[2] >= 6.0 && this.Loc[2] < 12.0) && (this.extraspeed == 0.0)){
-    	this.Loc = vec3(0.0,0.0,0.0);
-		at = vec3(0.0,0.0,0.0);
-		eye = vec3(0.0,1.0,-4.0);
+    	this.repsawn();
     }*/
 
     if(this.Loc[2] === 12){
     	//console.log("made it to finish line");
-    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2],this.zwidth))
-    	{
-    		console.log("Touching finish slot!!");
-    	}
+    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2],this.zwidth)){}
+
+    	this.respawn();
+
     }
 };
 

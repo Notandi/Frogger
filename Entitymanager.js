@@ -144,7 +144,14 @@ surfaceCollision : function(k,x,xwidth,z, zwidth){
             var zlocwidth = aCategory[i].getZwidth();
             if (((xloc + xlocwidth > x + xwidth)&& (xloc - xlocwidth < x + xwidth) && (zloc == z))
                 || 
-                ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z)){
+                ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z))
+            {
+                if(k === 7)//colliding block is a finish slot
+                {
+                    aCategory[i].changeStatus(); 
+                    //Changed color on finish slot
+                }                 
+
                 return true;
             }
         }
