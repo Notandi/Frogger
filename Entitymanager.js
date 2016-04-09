@@ -291,7 +291,7 @@ generateTarmac : function() {
         scale : vec3(12, 0.1, 6)
     }));
 
-    
+
 
     //Finish line
     this._tarmac.push(new Tarmac({

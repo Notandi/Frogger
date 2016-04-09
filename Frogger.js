@@ -46,7 +46,7 @@ window.onload = function init()
     
     gl.enable(gl.DEPTH_TEST);
 
-
+    console.log("initialized");
     //
     //  Load shaders and initialize attribute buffers
     //
