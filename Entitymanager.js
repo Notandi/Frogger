@@ -50,7 +50,7 @@ deferredSetup : function () {
 
 init: function() {
     this.generatePlayers();
-    this.generateCars();
+    //this.generateCars();
     this.generateLogs();
     this.generateTurtles();
     this.generateFlies();
@@ -129,8 +129,9 @@ generateCars : function() {
     }));
     
 },
-carcollision : function(x,xwidth,z, zwidth){
-    for (var c = 1; c < 2; ++c) {
+surfaceCollision : function(k,x,xwidth,z, zwidth){
+    
+    for (var c = k; c < k+1; ++c) {
 
         var aCategory = this._categories[c];
         var i = 0;
@@ -289,29 +290,28 @@ generateTarmac : function() {
         scale : vec3(12, 0.1, 1)
     }));
 
-
 },
 
 generateFinishSlots : function() {
     console.log("Generated finish slot");
     //Leftmost finish slot
     this._finishSlots.push(new FinishSlot({
-        loc : vec3(-1.0, -0.4, 12.0),
+        loc : vec3(-1.0, -0.45, 12.0),
         scale : vec3(0.5, 0.25, 0.5)
     }));
 
     this._finishSlots.push(new FinishSlot({
-        loc : vec3(-4.0, -0.4, 12.0),
+        loc : vec3(-4.0, -0.45, 12.0),
         scale : vec3(0.5, 0.25, 0.5)
     }));
 
     this._finishSlots.push(new FinishSlot({
-        loc : vec3(-7.0, -0.4, 12.0),
+        loc : vec3(-7.0, -0.45, 12.0),
         scale : vec3(0.5, 0.25, 0.5)
     }));
 
     this._finishSlots.push(new FinishSlot({
-        loc : vec3(-10.0, -0.4, 12.0),
+        loc : vec3(-10.0, -0.45, 12.0),
         scale : vec3(0.5, 0.25, 0.5)
     }));
 
