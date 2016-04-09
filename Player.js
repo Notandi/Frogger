@@ -1,13 +1,13 @@
 function Player(){
-	at = vec3(0.0,0.0,0.0);
-	eye = vec3(0.0,1.0,-4.0);
+	at = vec3(-5.5,0.0,0.0);
+	eye = vec3(-5.5,1.0,-4.0);
 }
 
 Player.prototype.Key_forward = 'W'.charCodeAt(0) ;
 Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
-Player.prototype.Loc = vec3(0.0,0.0,0.0)
+Player.prototype.Loc = vec3(-5.5,0.0,0.0)
 Player.prototype.xwidth = 0.25;
 Player.prototype.zwidth = 0.25;
 Player.prototype.speed = 0.1;
@@ -15,9 +15,9 @@ Player.prototype.extraspeed = 0.0;
 
 
 Player.prototype.respawn = function(){
-	this.Loc = vec3(0.0,0.0,0.0);
-	at = vec3(0.0,0.0,0.0);
-	eye = vec3(0.0,1.0,-4.0);
+	this.Loc = vec3(-5.5,0.0,0.0);
+	at = vec3(-5.5,0.0,0.0);
+	eye = vec3(-5.5,1.0,-4.0);
 };
 
 
