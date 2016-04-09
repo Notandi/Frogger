@@ -4,8 +4,8 @@ function FinishSlot(descr){
 
 FinishSlot.prototype.loc;
 FinishSlot.prototype.scale;
-FinishSlot.prototype.xwidth = 1.25/2.0;
-FinishSlot.prototype.zwidth = 0.6/2.0;
+FinishSlot.prototype.xwidth = 0.25/2.0;
+FinishSlot.prototype.zwidth = 0.5/2.0;
 
 
 FinishSlot.prototype.update = function(du){
