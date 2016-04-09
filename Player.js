@@ -7,7 +7,7 @@ Player.prototype.Key_forward = 'W'.charCodeAt(0) ;
 Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
-Player.prototype.Loc = vec3(-5.5,0.0,0.0)
+Player.prototype.Loc = vec3(-5.5,0.0,0.0);
 Player.prototype.xwidth = 0.25;
 Player.prototype.zwidth = 0.25;
 Player.prototype.speed = 0.1;
@@ -73,7 +73,7 @@ Player.prototype.render = function(gl){
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.Loc));
     mv1 = mult(mv1, scalem(0.1, 0.1, 0.1));
-    mv1 = mult(mv1, translate(0.0, -1.7, 0.0));
+    mv1 = mult(mv1, translate(0.0, -4.5, 0.0));
 
     gl.uniform4fv( colorLoc, vec4(0.0, 1.0, 0.0, 1.0 ) );
     
