@@ -63,11 +63,12 @@ Car.prototype.render = function(gl){
     var mv2 = mv;
     mv2 = mult(mv2, translate(this.loc));
     //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
+    mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));
     mv2 = mult(mv2, scalem( 1.25, 0.1, 0.4 ));
 
     gl.uniform4fv( colorLoc, vec4(1.0, 0.0, 0.0, 1.0) );
     gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
-    gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
     gl.drawArrays( gl.TRIANGLE_STRIP, 0, numTarmacVertices );
