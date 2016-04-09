@@ -57,7 +57,7 @@ Car.prototype.render = function(gl){
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
-    gl.drawArrays( gl.TRIANGLE_STRIP, 0, numCarVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numCarVertices );
 
 
     var mv2 = mv;
@@ -71,5 +71,5 @@ Car.prototype.render = function(gl){
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
-    gl.drawArrays( gl.TRIANGLE_STRIP, 0, numTarmacVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );
 };

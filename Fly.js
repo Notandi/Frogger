@@ -21,6 +21,6 @@ Fly.prototype.render = function(gl){
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
-    gl.drawArrays( gl.TRIANGLE_STRIP, 0, numFlyVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numFlyVertices );
 
 };
