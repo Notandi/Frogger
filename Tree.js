@@ -1,5 +1,6 @@
 function Tree(descr){
 	this.setup(descr);
+    
 }
 
 Tree.prototype.loc;
@@ -37,20 +38,22 @@ Tree.prototype.render = function(gl){
 
     // færa hlut
     var mv1 = mv;
-    console.log(this.loc);
     mv1 = mult(mv1, translate(this.loc));
 
     mv1 = mult(mv1, scalem(this.scale));
 
+    mv1 = mult(mv1, rotateY(10*this.loc[2]));
 
-    gl.uniform4fv( colorLoc, vec4(64/256, 164/256, 223/256, 1.0 ) );
-    gl.bindBuffer( gl.ARRAY_BUFFER, waterBuffer );
+
+
+    gl.uniform4fv( colorLoc, vec4(this.color) );
+    gl.bindBuffer( gl.ARRAY_BUFFER, treeBuffer );
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
-    gl.drawArrays( gl.TRIANGLES, 0, numWaterVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numTreeVertices );
 
-    console.log("made it to render");
+   
 
 
 };
