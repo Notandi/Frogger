@@ -1,5 +1,6 @@
 function Tree(descr){
 	this.setup(descr);
+    this.rot = Math.random()*360;
     
 }
 
@@ -8,6 +9,7 @@ Tree.prototype.speed;
 Tree.prototype.xwidth = 2.0/2.0;
 Tree.prototype.color;
 Tree.prototype.scale;
+Tree.prototype.rot;
 
 Tree.prototype.update = function(du){
 
@@ -42,7 +44,7 @@ Tree.prototype.render = function(gl){
 
     mv1 = mult(mv1, scalem(this.scale));
 
-    mv1 = mult(mv1, rotateY(10*this.loc[2]));
+    mv1 = mult(mv1, rotateY(this.rot));
 
 
 

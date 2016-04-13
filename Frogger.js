@@ -139,7 +139,7 @@ window.onload = function init()
     
 
     // Atburðaföll fyrir mús
-    canvas.addEventListener("mousedown", function(e){
+    /*canvas.addEventListener("mousedown", function(e){
         movement = true;
         origX = e.offsetX;
         origY = e.offsetY;
@@ -157,21 +157,21 @@ window.onload = function init()
             origX = e.offsetX;
             origY = e.offsetY;
         }
-    } );
+    } );*/
     
     // Atburðafall fyrir lyklaborð
     window.addEventListener("keydown", handleKeydown);
     window.addEventListener("keyup", handleKeyup);
  
 
-    // Atburðafall fyri músarhjól
+    /*// Atburðafall fyri músarhjól
      window.addEventListener("mousewheel", function(e){
          if( e.wheelDelta > 0.0 ) {
              eye[2] += 0.2;
          } else {
              eye[2] -= 0.2;
          }
-     }  );  
+     }  );  */
 
     entityManager.init();
     main.init();

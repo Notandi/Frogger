@@ -51,8 +51,8 @@ deferredSetup : function () {
 
 init: function() {
     this.generatePlayers();
-    //this.generateCars();
-    //this.generateLogs();
+    this.generateCars();
+    this.generateLogs();
     //this.generateTurtles();
     //this.generateFlies();
     this.generateWater();
@@ -67,7 +67,7 @@ generateTrees : function() {
     //loc : vec3(1.9, -0.6, 7.0)
     //loc : vec3(1.9, -0.6, 5.0),
     
-    var treeLength = 12;
+    var treeLength = 20;
     //GENERATE LEFT SIDE OF RIVER TREE'S
     for(var i = 0; i < treeLength; i++)
     {

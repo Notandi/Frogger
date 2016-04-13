@@ -41,20 +41,23 @@ Player.prototype.reset = function(){
 
 
 Player.prototype.update = function(du){
-    if (this.resetcount === 1){
+    if (this.resetcount === 4){
         document.getElementById("score").innerHTML = "You won !!!!!!";
-        eye =  vec3(-5.5,1.0,5.0);
-        at = vec3(-5.5,0.0,10.0);
+        eye =  vec3(-5.5,1.0,2.0);
+        at = vec3(-5.5,1.0,8.0);
         return;
     }
     if (this.life < 0){
         document.getElementById("score").innerHTML = "You lost :( ";
+        this.Loc = vec3(0.0,-1.0,0.0)
         eye =  vec3(-5.5,1.0,-4.0);
         at = vec3(-5.5,0.0,0.0);
         return;
     }
     this.score -= du;
     document.getElementById("score").innerHTML = "score" + " : "+ Math.ceil(this.score);
+    document.getElementById("life").innerHTML = "Life" + " : "+ this.life;
+
 	if (eatKey(this.Key_forward)) {
         
         if(this.Loc[2] <= this.Zmax)
@@ -104,14 +107,21 @@ Player.prototype.update = function(du){
     	eye[0] += this.extraspeed*du;
     	at[0] += this.extraspeed*du;
     }
+    
 
     if(this.Loc[2] === 12){
     	//console.log("made it to finish line");
-    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2])){this.reset()}
+    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2])){
+            this.reset();
+            return;
+        }
 
     	this.respawn();
 
     }
+    if((this.Loc[2] >= 6) && (this.extraspeed == 0.0)){
+        this.respawn();
+      }
 };
 
 Player.prototype.render = function(gl){
