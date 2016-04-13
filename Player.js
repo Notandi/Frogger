@@ -66,13 +66,14 @@ Player.prototype.update = function(du){
 	if (entityManager.surfaceCollision(1,this.Loc[0],this.xwidth,this.Loc[2])){
 		this.respawn();	
 	}
-	this.extraspeed = entityManager.logcollision(this.Loc[0],this.xwidth,this.Loc[2]);
-    this.Loc = add(this.Loc,vec3(this.extraspeed*du,0.0,0.0));
-    eye[0] += this.extraspeed*du;
-    at[0] += this.extraspeed*du;
-    /*if((this.Loc[2] >= 6.0 && this.Loc[2] < 12.0) && (this.extraspeed == 0.0)){
-    	this.repsawn();
-    }*/
+	
+	if(this.Loc[0] >= this.Xmax && this.Loc[0] <= this.Xmin)
+	{
+		this.extraspeed = entityManager.logcollision(this.Loc[0],this.xwidth,this.Loc[2]);
+    	this.Loc = add(this.Loc,vec3(this.extraspeed*du,0.0,0.0));
+    	eye[0] += this.extraspeed*du;
+    	at[0] += this.extraspeed*du;
+    }
 
     if(this.Loc[2] === 12){
     	//console.log("made it to finish line");
