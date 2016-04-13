@@ -38,6 +38,7 @@ FinishSlot.prototype.changeStatus = function(){
     this.color = vec4(0.0, 1.0, 0.0, 1.0 );
     this.buffer = playerBuffer;
     this.bufferlength = numPlayerVertices;
+    this.scale = vec3(0.1/0.5, 0.1/0.5, 0.1/0.5);
 };
 
 

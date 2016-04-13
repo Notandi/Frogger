@@ -15,6 +15,7 @@ Player.prototype.Zmax = 12.0;
 Player.prototype.Xmax = -11.0;
 Player.prototype.Zmin = 0.0;
 Player.prototype.Xmin = 0.0;
+Player.prototype.score = 5000;
 
 
 Player.prototype.respawn = function(){
@@ -25,6 +26,8 @@ Player.prototype.respawn = function(){
 
 
 Player.prototype.update = function(du){
+    this.score -= du;
+    document.getElementById("score").innerHTML = "score" + " : "+ Math.ceil(this.score);
 	if (eatKey(this.Key_forward)) {
         
         if(this.Loc[2] <= this.Zmax)
