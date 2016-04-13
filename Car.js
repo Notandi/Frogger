@@ -1,5 +1,6 @@
 function Car(descr){
 	this.setup(descr);
+    this.color = vec4(Math.random(),Math.random(),Math.random(),1.0)
 }
 
 Car.prototype.startLoc = 1.25;//vec3(1.25, -0.4, 1.0);
@@ -8,6 +9,7 @@ Car.prototype.loc;
 Car.prototype.speed;
 Car.prototype.xwidth = 1.25/2.0;
 Car.prototype.zwidth = 1.0/2.0;
+Car.prototype.color;
 
 Car.prototype.update = function(du){
 	//console.log("car");
@@ -56,7 +58,7 @@ Car.prototype.render = function(gl){
         mv1 = mult(mv1, rotateY(180))
     }
 
-    gl.uniform4fv( colorLoc, vec4(0.4, 0.4, 0.4, 1.0) );
+    gl.uniform4fv( colorLoc, this.color );
     gl.bindBuffer( gl.ARRAY_BUFFER, carBuffer );
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
