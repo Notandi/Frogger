@@ -8,7 +8,7 @@ Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
 Player.prototype.Loc = vec3(-5.5,0.0,0.0);
-Player.prototype.xwidth = 0.05; // Var 0.25 áður en ég breytti í 0.05
+Player.prototype.xwidth = 0.25/2.0; // Var 0.25 áður en ég breytti í 0.05
 Player.prototype.zwidth = 0.25;
 Player.prototype.speed = 0.1;
 Player.prototype.extraspeed = 0.0;
@@ -81,5 +81,19 @@ Player.prototype.render = function(gl){
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLES, 0, numPlayerVertices );
+    var mv2 = mv;
+
+    mv2 = mult(mv2, translate(this.Loc));
+    mv2 = mult(mv2, translate(0.0,-0.5,0.0))
+    //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
+    mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));
+    mv2 = mult(mv2, scalem( 0.25, 0.25, 0.25 ));
+
+    gl.uniform4fv( colorLoc, vec4(1.0, 0.0, 0.0, 1.0) );
+    gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
+    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
+
+    gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
+    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );
 
 };
