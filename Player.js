@@ -106,9 +106,9 @@ Player.prototype.render = function(gl){
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLES, 0, numPlayerVertices );
-    var mv2 = mv;
+    /*var mv2 = mv;
 
-    /*mv2 = mult(mv2, translate(this.Loc));
+    mv2 = mult(mv2, translate(this.Loc));
     mv2 = mult(mv2, translate(0.0,-0.5,0.0))
     //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
     mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));

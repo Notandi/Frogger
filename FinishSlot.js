@@ -4,8 +4,7 @@ function FinishSlot(descr){
 
 FinishSlot.prototype.loc;
 FinishSlot.prototype.scale;
-FinishSlot.prototype.xwidth = 0.25/2.0;
-FinishSlot.prototype.zwidth = 0.5/2.0;
+FinishSlot.prototype.xwidth = 1/2.0;
 FinishSlot.prototype.color = vec4(1.0, 0.0, 0.0, 1.0);
 FinishSlot.prototype.buffer;
 FinishSlot.prototype.bufferlength;
@@ -30,9 +29,6 @@ FinishSlot.prototype.getZ = function (){
 };
 FinishSlot.prototype.getXwidth = function(){
     return this.xwidth;
-};
-FinishSlot.prototype.getZwidth = function(){
-    return this.zwidth;
 };
 FinishSlot.prototype.changeStatus = function(){
     this.color = vec4(0.0, 1.0, 0.0, 1.0 );
@@ -65,5 +61,4 @@ FinishSlot.prototype.render = function(gl){
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLES, 0, this.bufferlength );
-
 };
