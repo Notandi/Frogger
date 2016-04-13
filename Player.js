@@ -11,6 +11,10 @@ Player.prototype.Loc = vec3(-5.5,0.0,0.0);
 Player.prototype.xwidth = 0.25/2.0;
 Player.prototype.speed = 0.1;
 Player.prototype.extraspeed = 0.0;
+Player.prototype.Zmax = 12.0;
+Player.prototype.Xmax = -11.0;
+Player.prototype.Zmin = 0.0;
+Player.prototype.Xmin = 0.0;
 
 
 Player.prototype.respawn = function(){
@@ -22,24 +26,42 @@ Player.prototype.respawn = function(){
 
 Player.prototype.update = function(du){
 	if (eatKey(this.Key_forward)) {
-        this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
-        eye[2] += 1.0;
-        at[2] += 1.0;
+        
+        if(this.Loc[2] <= this.Zmax)
+       	{
+        	this.Loc = add(this.Loc,vec3(0.0,0.0,1.0));
+        	eye[2] += 1.0;
+        	at[2] += 1.0;
+    	}
     }
     if (eatKey(this.Key_Backward)) {
-        this.Loc = add(this.Loc,vec3(0.0,0.0,-1.0));
-        eye[2] -= 1.0;
-        at[2] -= 1.0;
+    	if(this.Loc[2] > this.Zmin)
+    	{
+    		 this.Loc = add(this.Loc,vec3(0.0,0.0,-1.0));
+        	eye[2] -= 1.0;
+        	at[2] -= 1.0;
+    	}
+       
     }
     if (keys[this.Key_Left]) {
-        this.Loc = add(this.Loc,vec3(this.speed*du,0.0,0.0));
-        eye[0] += this.speed*du;
-        at[0] += this.speed*du;
+
+    	if(this.Loc[0] <= this.Xmin)
+    	{
+    		this.Loc = add(this.Loc,vec3(this.speed*du,0.0,0.0));
+        	eye[0] += this.speed*du;
+        	at[0] += this.speed*du;
+    	}
+        
     }
     if (keys[this.Key_Right]) {
-        this.Loc = add(this.Loc,vec3(-(this.speed*du),0.0,0.0));
-        eye[0] -= this.speed*du;
-        at[0] -= this.speed*du;
+
+    	if(this.Loc[0] >= this.Xmax)
+    	{
+    		this.Loc = add(this.Loc,vec3(-(this.speed*du),0.0,0.0));
+        	eye[0] -= this.speed*du;
+        	at[0] -= this.speed*du;
+    	}
+        
     }
 	if (entityManager.surfaceCollision(1,this.Loc[0],this.xwidth,this.Loc[2])){
 		this.respawn();	
