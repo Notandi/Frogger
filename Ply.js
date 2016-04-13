@@ -44,6 +44,6 @@ Ply.prototype.getFinishSlot = function(){
 };
 
 Ply.prototype.getTree = function(){
-    var playData = this.PR.read("log.ply");
+    var plyData = this.PR.read("log.ply");
     return plyData.points;
 };
