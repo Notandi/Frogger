@@ -10,6 +10,7 @@ Tarmac.prototype.update = function(du){
 
 Tarmac.prototype.loc;
 Tarmac.prototype.scale;
+Tarmac.prototype.color;
 
 Tarmac.prototype.setup = function (descr) {
     for (var property in descr) {
@@ -31,7 +32,7 @@ Tarmac.prototype.render = function(gl){
     mv1 = mult(mv1, scalem(this.scale));
 
 
-    gl.uniform4fv( colorLoc, vec4(0.2, 0.2, 0.2, 1.0) );
+    gl.uniform4fv( colorLoc, this.color );
     gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 

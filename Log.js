@@ -6,8 +6,7 @@ Log.prototype.startLoc = 1.15;//vec3(1.15, -0.59, 6.0);
 Log.prototype.endLoc = -12.15;//vec3(-12.15, -0.59, 6.0);
 Log.prototype.loc;
 Log.prototype.speed;
-Log.prototype.xwidth = 1.25/2.0;
-Log.prototype.zwidth = 0.6/2.0;
+Log.prototype.xwidth = 2.0/2.0;
 
 
 Log.prototype.getSpeed = function(){
@@ -41,9 +40,6 @@ Log.prototype.getZ = function (){
 Log.prototype.getXwidth = function(){
     return this.xwidth;
 };
-Log.prototype.getZwidth = function(){
-    return this.zwidth;
-};
 
 
 
@@ -75,7 +71,7 @@ Log.prototype.render = function(gl){
     mv2 = mult(mv2, translate(0.0,-0.5,0.0))
     //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
     mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));
-    mv2 = mult(mv2, scalem( 1.25, 1.25, 1.25 ));
+    mv2 = mult(mv2, scalem( 1.0, 1.0, 1.0));
 
     gl.uniform4fv( colorLoc, vec4(1.0, 0.0, 0.0, 1.0) );
     gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
