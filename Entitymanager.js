@@ -67,7 +67,7 @@ generateTrees : function() {
     //loc : vec3(1.9, -0.6, 7.0)
     //loc : vec3(1.9, -0.6, 5.0),
     
-    var treeLength = 20;
+    var treeLength = 25;
     //GENERATE LEFT SIDE OF RIVER TREE'S
     for(var i = 0; i < treeLength; i++)
     {
@@ -84,6 +84,19 @@ generateTrees : function() {
     {
         this._trees.push(new Tree({
             loc : vec3(-11.9, 0.5, i+6.0),
+            color : vec4(128/256, 0.0, 0.0, 1.0 ),
+            scale : vec3(3.0, 2.0, 1.0)
+        }));
+
+    }
+
+
+    var treeWidth = 10;
+    //GENERATE ACROSS THE MUD FIELD TREE'S
+    for(var i = 0; i < treeWidth; i=i+0.5)
+    {
+        this._trees.push(new Tree({
+            loc : vec3(-(0.9+i), 0.5, 30.0),
             color : vec4(128/256, 0.0, 0.0, 1.0 ),
             scale : vec3(3.0, 2.0, 1.0)
         }));
@@ -354,8 +367,8 @@ generateTarmac : function() {
 
     //Field behind finish line
     this._tarmac.push(new Tarmac ({
-        loc : vec3(-5.5, -0.6, 22.0),
-        scale : vec3(40, 0.1, 20.0),
+        loc : vec3(-5.5, -0.6, 32.5),
+        scale : vec3(40, 0.1, 40.0),
         color : vec4(102/256, 51/256, 0, 1.0)
 
     }));
