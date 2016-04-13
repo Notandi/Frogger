@@ -7,6 +7,8 @@ FinishSlot.prototype.scale;
 FinishSlot.prototype.xwidth = 0.25/2.0;
 FinishSlot.prototype.zwidth = 0.5/2.0;
 FinishSlot.prototype.color = vec4(1.0, 0.0, 0.0, 1.0);
+FinishSlot.prototype.buffer;
+FinishSlot.prototype.bufferlength;
 
 
 FinishSlot.prototype.update = function(du){
@@ -34,6 +36,8 @@ FinishSlot.prototype.getZwidth = function(){
 };
 FinishSlot.prototype.changeStatus = function(){
     this.color = vec4(0.0, 1.0, 0.0, 1.0 );
+    this.buffer = playerBuffer;
+    this.bufferlength = numPlayerVertices;
 };
 
 
@@ -55,10 +59,10 @@ FinishSlot.prototype.render = function(gl){
 
 
     gl.uniform4fv( colorLoc, this.color );
-    gl.bindBuffer( gl.ARRAY_BUFFER, finishSlotBuffer );
+    gl.bindBuffer( gl.ARRAY_BUFFER, this.buffer );
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
-    gl.drawArrays( gl.TRIANGLES, 0, numFinishSlotVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, this.bufferlength );
 
 };

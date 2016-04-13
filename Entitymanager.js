@@ -306,22 +306,30 @@ generateFinishSlots : function() {
     //Leftmost finish slot
     this._finishSlots.push(new FinishSlot({
         loc : vec3(-1.0, -0.45, 12.0),
-        scale : vec3(0.5, 0.25, 0.5)
+        scale : vec3(0.5, 0.25, 0.5),
+        buffer : finishSlotBuffer,
+        bufferlength : numFinishSlotVertices
     }));
 
     this._finishSlots.push(new FinishSlot({
         loc : vec3(-4.0, -0.45, 12.0),
-        scale : vec3(0.5, 0.25, 0.5)
+        scale : vec3(0.5, 0.25, 0.5),
+        buffer : finishSlotBuffer,
+        bufferlength : numFinishSlotVertices
     }));
 
     this._finishSlots.push(new FinishSlot({
         loc : vec3(-7.0, -0.45, 12.0),
-        scale : vec3(0.5, 0.25, 0.5)
+        scale : vec3(0.5, 0.25, 0.5),
+        buffer : finishSlotBuffer,
+        bufferlength : numFinishSlotVertices
     }));
 
     this._finishSlots.push(new FinishSlot({
         loc : vec3(-10.0, -0.45, 12.0),
-        scale : vec3(0.5, 0.25, 0.5)
+        scale : vec3(0.5, 0.25, 0.5),
+        buffer : finishSlotBuffer,
+        bufferlength : numFinishSlotVertices
     }));
 
 },

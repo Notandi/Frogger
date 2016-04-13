@@ -30,6 +30,8 @@ var waterBuffer;
 var numWaterVertices;
 var tarmacBuffer;
 var numTarmacVertices;
+var finishSlotBuffer;
+var numFinishSlotVertices;
 
 window.onload = function init()
 {
