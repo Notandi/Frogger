@@ -52,8 +52,8 @@ init: function() {
     this.generatePlayers();
     this.generateCars();
     this.generateLogs();
-    this.generateTurtles();
-    this.generateFlies();
+    //this.generateTurtles();
+    //this.generateFlies();
     this.generateWater();
     this.generateTarmac();
     this.generateFinishSlots();
@@ -313,10 +313,113 @@ generateTarmac : function() {
         color : vec4(117/256, 120/256, 123/256, 1.0)
     }));
 
+    //grass field
     this._tarmac.push(new Tarmac({
         loc : vec3(-5.5, -0.6, -2.5),
         scale : vec3(40, 0.1, 6),
         color : vec4(1/256, 116/256, 17/256, 1.0)
+    }));
+
+
+    //128,0,0 - maroon
+    //side wall left
+    this._tarmac.push(new Tarmac({
+        loc : vec3(1.9, -0.6, -1.0),
+        scale : vec3(3.0, 6.0, 3.0),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+    }));
+
+    //CAR TUNNELS LEFT
+
+    //roof of tunnels
+    this._tarmac.push(new Tarmac({
+        loc : vec3(1.9, 2.83, 1.5),
+        scale : vec3(3.0, 6.0, 6.0),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+    //sidewalk column
+    this._tarmac.push(new Tarmac({
+        loc : vec3(1.9, -0.6, 5.0),
+        scale : vec3(3.0, 10.0, 1.0),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+    }));
+
+    //road column 1
+    this._tarmac.push(new Tarmac({
+        loc : vec3(1.9, -0.6, 1.5),
+        scale : vec3(3.0, 6.0, 0.05),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+      //road column 2
+    this._tarmac.push(new Tarmac({
+        loc : vec3(1.9, -0.6, 2.5),
+        scale : vec3(3.0, 6.0, 0.05),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+       //road column 3
+    this._tarmac.push(new Tarmac({
+        loc : vec3(1.9, -0.6, 3.5),
+        scale : vec3(3.0, 6.0, 0.05),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+
+
+    //side wall right
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-12.9, -0.6, -1.0),
+        scale : vec3(3.0, 6.0, 3.0),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+
+    //CAR TUNNELS RIGHT
+
+    //roof of tunnels
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-12.9, 2.83, 1.5),
+        scale : vec3(3.0, 6.0, 6.0),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+    //sidewalk column
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-12.9, -0.6, 5.0),
+        scale : vec3(3.0, 10.0, 1.0),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+    }));
+
+    //road column 1
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-12.9, -0.6, 1.5),
+        scale : vec3(3.0, 6.0, 0.05),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+      //road column 2
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-12.9, -0.6, 2.5),
+        scale : vec3(3.0, 6.0, 0.05),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
+    }));
+
+       //road column 3
+    this._tarmac.push(new Tarmac({
+        loc : vec3(-12.9, -0.6, 3.5),
+        scale : vec3(3.0, 6.0, 0.05),
+        color : vec4(64/256, 64/256, 64/256, 1.0)
+
     }));
 },
 

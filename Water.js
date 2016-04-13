@@ -14,7 +14,7 @@ Water.prototype.render = function(gl){
     // færa hlut
     var mv1 = mv;
     mv1 = mult(mv1, translate(-5.5, -0.6, 8.5));
-        mv1 = mult(mv1, scalem(0.5,0.5,0.5));
+    mv1 = mult(mv1, scalem(0.5,0.5,0.5));
 
     mv1 = mult(mv1, scalem( 40, 0.1, 6 ));
 
