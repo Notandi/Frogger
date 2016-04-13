@@ -8,8 +8,7 @@ Player.prototype.Key_Backward = 'S'.charCodeAt(0);
 Player.prototype.Key_Left = 'A'.charCodeAt(0);
 Player.prototype.Key_Right = 'D'.charCodeAt(0);
 Player.prototype.Loc = vec3(-5.5,0.0,0.0);
-Player.prototype.xwidth = 0.25/2.0; // Var 0.25 áður en ég breytti í 0.05
-Player.prototype.zwidth = 0.25;
+Player.prototype.xwidth = 0.25/2.0;
 Player.prototype.speed = 0.1;
 Player.prototype.extraspeed = 0.0;
 
@@ -42,10 +41,10 @@ Player.prototype.update = function(du){
         eye[0] -= this.speed*du;
         at[0] -= this.speed*du;
     }
-	if (entityManager.surfaceCollision(1,this.Loc[0],this.xwidth,this.Loc[2],this.zwidth)){
+	if (entityManager.surfaceCollision(1,this.Loc[0],this.xwidth,this.Loc[2])){
 		this.respawn();	
 	}
-	this.extraspeed = entityManager.logcollision(this.Loc[0],this.xwidth,this.Loc[2],this.zwidth);
+	this.extraspeed = entityManager.logcollision(this.Loc[0],this.xwidth,this.Loc[2]);
     this.Loc = add(this.Loc,vec3(this.extraspeed*du,0.0,0.0));
     eye[0] += this.extraspeed*du;
     at[0] += this.extraspeed*du;
@@ -55,7 +54,7 @@ Player.prototype.update = function(du){
 
     if(this.Loc[2] === 12){
     	//console.log("made it to finish line");
-    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2],this.zwidth)){}
+    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2])){}
 
     	this.respawn();
 
@@ -83,7 +82,7 @@ Player.prototype.render = function(gl){
     gl.drawArrays( gl.TRIANGLES, 0, numPlayerVertices );
     var mv2 = mv;
 
-    mv2 = mult(mv2, translate(this.Loc));
+    /*mv2 = mult(mv2, translate(this.Loc));
     mv2 = mult(mv2, translate(0.0,-0.5,0.0))
     //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
     mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));
@@ -94,6 +93,6 @@ Player.prototype.render = function(gl){
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
-    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );*/
 
 };

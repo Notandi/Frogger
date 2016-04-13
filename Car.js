@@ -1,6 +1,6 @@
 function Car(descr){
 	this.setup(descr);
-    this.color = vec4(Math.random(),Math.random(),Math.random(),1.0)
+    this.color = vec4(0.2 + Math.random()*0.8 ,0.2 + Math.random()*0.8 ,0.2 + Math.random()*0.8 ,1.0)
 }
 
 Car.prototype.startLoc = 1.25;//vec3(1.25, -0.4, 1.0);
@@ -8,7 +8,6 @@ Car.prototype.endLoc = -12.25;//vec3(-12.25, -0.4, 1.0);
 Car.prototype.loc;
 Car.prototype.speed;
 Car.prototype.xwidth = 1.25/2.0;
-Car.prototype.zwidth = 1.0/2.0;
 Car.prototype.color;
 
 Car.prototype.update = function(du){
@@ -51,6 +50,7 @@ Car.prototype.render = function(gl){
     // færa hlut
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.loc));
+    mv1 = mult(mv1, translate(0.0,0.03,0.0));
     mv1 = mult(mv1, scalem( 0.201, 0.201, 0.201 ));
     //mv1 = mult(mv1, scalem( 1.25, 0.1, 0.4 ));
 
@@ -66,7 +66,7 @@ Car.prototype.render = function(gl){
     gl.drawArrays( gl.TRIANGLES, 0, numCarVertices );
 
 
-    var mv2 = mv;
+    /*var mv2 = mv;
     mv2 = mult(mv2, translate(this.loc));
     //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
     mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));
@@ -77,5 +77,5 @@ Car.prototype.render = function(gl){
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
-    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );
+    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );*/
 };

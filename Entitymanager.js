@@ -129,7 +129,7 @@ generateCars : function() {
     }));
     
 },
-surfaceCollision : function(k,x,xwidth,z, zwidth){
+surfaceCollision : function(k,x,xwidth,z){
     
     for (var c = k; c < k+1; ++c) {
 
@@ -141,7 +141,6 @@ surfaceCollision : function(k,x,xwidth,z, zwidth){
             var xloc = aCategory[i].getX();
             var zloc = aCategory[i].getZ();
             var xlocwidth = aCategory[i].getXwidth();
-            var zlocwidth = aCategory[i].getZwidth();
             if (((xloc + xlocwidth > x + xwidth)&& (xloc - xlocwidth < x + xwidth) && (zloc == z))
                 || 
                 ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z))
@@ -157,7 +156,7 @@ surfaceCollision : function(k,x,xwidth,z, zwidth){
         }
     }
 },
-logcollision : function(x,xwidth,z, zwidth){
+logcollision : function(x,xwidth,z){
     for (var c = 2; c < 3; ++c) {
 
         var aCategory = this._categories[c];
@@ -168,7 +167,6 @@ logcollision : function(x,xwidth,z, zwidth){
             var xloc = aCategory[i].getX();
             var zloc = aCategory[i].getZ();
             var xlocwidth = aCategory[i].getXwidth() - 0.2;
-            var zlocwidth = aCategory[i].getZwidth();
             if (((xloc + xlocwidth > x + xwidth)&& (xloc - xlocwidth < x + xwidth) && (zloc == z))
                 || 
                 ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z)){
