@@ -16,16 +16,43 @@ Player.prototype.Xmax = -11.0;
 Player.prototype.Zmin = 0.0;
 Player.prototype.Xmin = 0.0;
 Player.prototype.score = 5000;
+Player.prototype.totalscore = 0;
+Player.prototype.life = 3;
+Player.prototype.win = false;
+Player.prototype.resetcount = 0;
 
 
 Player.prototype.respawn = function(){
+    this.life--;
 	this.Loc = vec3(-5.5,0.0,0.0);
 	at = vec3(-5.5,0.0,0.0);
 	eye = vec3(-5.5,1.0,-4.0);
+    this.score = 5000;
+};
+Player.prototype.reset = function(){
+    this.resetcount++;
+    this.totalscore += this.score
+    this.Loc = vec3(-5.5,0.0,0.0);
+    at = vec3(-5.5,0.0,0.0);
+    eye = vec3(-5.5,1.0,-4.0);
+    this.score = 5000;
+    document.getElementById("totalscore").innerHTML = "Total score" + " : "+ Math.ceil(this.totalscore);
 };
 
 
 Player.prototype.update = function(du){
+    if (this.resetcount === 1){
+        document.getElementById("score").innerHTML = "You won !!!!!!";
+        eye =  vec3(-5.5,1.0,5.0);
+        at = vec3(-5.5,0.0,10.0);
+        return;
+    }
+    if (this.life < 0){
+        document.getElementById("score").innerHTML = "You lost :( ";
+        eye =  vec3(-5.5,1.0,-4.0);
+        at = vec3(-5.5,0.0,0.0);
+        return;
+    }
     this.score -= du;
     document.getElementById("score").innerHTML = "score" + " : "+ Math.ceil(this.score);
 	if (eatKey(this.Key_forward)) {
@@ -80,7 +107,7 @@ Player.prototype.update = function(du){
 
     if(this.Loc[2] === 12){
     	//console.log("made it to finish line");
-    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2])){}
+    	if(entityManager.surfaceCollision(7,this.Loc[0],this.xwidth,this.Loc[2])){this.reset()}
 
     	this.respawn();
 

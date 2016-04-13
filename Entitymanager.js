@@ -190,6 +190,10 @@ surfaceCollision : function(k,x,xwidth,z){
             var xloc = aCategory[i].getX();
             var zloc = aCategory[i].getZ();
             var xlocwidth = aCategory[i].getXwidth();
+            if (k === 7 && (aCategory[i].getStatus() === false)) {
+                console.log("á ekki að gera þetta");
+                continue;
+            }
             if (((xloc + xlocwidth > x + xwidth)&& (xloc - xlocwidth < x + xwidth) && (zloc == z))
                 || 
                 ((xloc + xlocwidth > x - xwidth)&& (xloc - xlocwidth < x - xwidth)) && (zloc == z))

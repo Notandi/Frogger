@@ -8,6 +8,7 @@ FinishSlot.prototype.xwidth = 1/2.0;
 FinishSlot.prototype.color = vec4(1.0, 0.0, 0.0, 1.0);
 FinishSlot.prototype.buffer;
 FinishSlot.prototype.bufferlength;
+FinishSlot.prototype.isAvailable = true;
 
 
 FinishSlot.prototype.update = function(du){
@@ -15,6 +16,9 @@ FinishSlot.prototype.update = function(du){
    
 
 };
+FinishSlot.prototype.getStatus = function (){
+    return this.isAvailable;
+}
 
 FinishSlot.prototype.setup = function (descr) {
     for (var property in descr) {
@@ -31,6 +35,7 @@ FinishSlot.prototype.getXwidth = function(){
     return this.xwidth;
 };
 FinishSlot.prototype.changeStatus = function(){
+    this.isAvailable = false;
     this.color = vec4(0.0, 1.0, 0.0, 1.0 );
     this.buffer = playerBuffer;
     this.bufferlength = numPlayerVertices;
