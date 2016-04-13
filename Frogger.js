@@ -112,6 +112,13 @@ window.onload = function init()
     gl.bindBuffer( gl.ARRAY_BUFFER, finishSlotBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(finishSlotVertices), gl.STATIC_DRAW );
 
+    // VBO for tree
+    var treeVertices = ply.getTree();
+    numTreeVertices = treeVertices.length;
+    treeBuffer = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, treeBuffer );
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(treeVertices), gl.STATIC_DRAW );
+
 
 
     vPosition = gl.getAttribLocation( program, "vPosition" );

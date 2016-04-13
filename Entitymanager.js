@@ -35,6 +35,7 @@ _flies : [],
 _water : [],
 _tarmac : [],
 _finishSlots : [],
+_trees : [],
 
 // "PRIVATE" METHODS
 
@@ -45,7 +46,7 @@ _finishSlots : [],
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._players,this._cars, this._logs, this._turtles, this._flies, this._water, this._tarmac, this._finishSlots];
+    this._categories = [this._players,this._cars, this._logs, this._turtles, this._flies, this._water, this._tarmac, this._finishSlots, this._trees];
 },
 
 init: function() {
@@ -57,7 +58,12 @@ init: function() {
     this.generateWater();
     this.generateTarmac();
     this.generateFinishSlots();
+    this.generateTrees();
 
+},
+
+generateTrees : function() {
+   
 },
 
 generatePlayers : function() {
