@@ -63,6 +63,14 @@ init: function() {
 },
 
 generateTrees : function() {
+    //128,0,0 - maroon
+    //loc : vec3(1.9, -0.6, 7.0)
+    this._trees.push(new Tree({
+        loc : vec3(-5.5, 0.0, 0.0),
+        color : vec4(128/256, 0.0, 0.0, 1.0 ),
+        scale : vec3(3.0, 10.0, 1.0)
+    }));
+
    
 },
 

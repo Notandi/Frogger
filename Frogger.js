@@ -32,6 +32,8 @@ var tarmacBuffer;
 var numTarmacVertices;
 var finishSlotBuffer;
 var numFinishSlotVertices;
+var treeBuffer;
+var numTreeVertices;
 
 window.onload = function init()
 {
