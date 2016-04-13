@@ -52,6 +52,10 @@ Car.prototype.render = function(gl){
     mv1 = mult(mv1, scalem( 0.201, 0.1, 0.17 ));
     //mv1 = mult(mv1, scalem( 1.25, 0.1, 0.4 ));
 
+    if (this.speed > 0){
+        mv1 = mult(mv1, rotateY(180))
+    }
+
     gl.uniform4fv( colorLoc, vec4(0.4, 0.4, 0.4, 1.0) );
     gl.bindBuffer( gl.ARRAY_BUFFER, carBuffer );
     gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
