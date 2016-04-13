@@ -56,9 +56,11 @@ Log.prototype.render = function(gl){
     // færa hlut
     var mv1 = mv;
     mv1 = mult(mv1, translate(this.loc));
-    mv1 = mult(mv1, scalem( 1.25, 0.1, 0.6 ));
-
-    
+    mv1 = mult(mv1, translate(0.0,-0.05,0.0,0.0))
+    //mv1 = mult(mv1, scalem( 1.25, 1.25, 1.25 ));
+    mv1 = mult(mv1, rotateZ(4));
+    mv1 = mult(mv1, rotateX(90));
+    mv1 = mult(mv1, rotateZ(90));
 
     gl.uniform4fv( colorLoc, vec4(0.5, 0.5, 0, 1.0 ) );
     gl.bindBuffer( gl.ARRAY_BUFFER, logBuffer );
@@ -66,5 +68,20 @@ Log.prototype.render = function(gl){
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLE_STRIP, 0, numLogVertices );
+    
+
+    /*mv2 = mv;
+    mv2 = mult(mv2, translate(this.loc));
+    mv2 = mult(mv2, translate(0.0,-0.5,0.0))
+    //mv2 = mult(mv2, scalem( 0.1, 0.1, 0.1 ));
+    mv2 = mult(mv2, scalem(0.5, 0.5, 0.5));
+    mv2 = mult(mv2, scalem( 1.25, 1.25, 1.25 ));
+
+    gl.uniform4fv( colorLoc, vec4(1.0, 0.0, 0.0, 1.0) );
+    gl.bindBuffer( gl.ARRAY_BUFFER, tarmacBuffer );
+    gl.vertexAttribPointer( vPosition, 4, gl.FLOAT, false, 0, 0 );
+
+    gl.uniformMatrix4fv(mvLoc, false, flatten(mv2));
+    gl.drawArrays( gl.TRIANGLES, 0, numTarmacVertices );*/
 
 };
