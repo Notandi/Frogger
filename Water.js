@@ -16,7 +16,7 @@ Water.prototype.render = function(gl){
     mv1 = mult(mv1, translate(-5.5, -0.6, 8.5));
         mv1 = mult(mv1, scalem(0.5,0.5,0.5));
 
-    mv1 = mult(mv1, scalem( 12, 0.1, 6 ));
+    mv1 = mult(mv1, scalem( 40, 0.1, 6 ));
 
 
     gl.uniform4fv( colorLoc, vec4(64/256, 164/256, 223/256, 1.0 ) );

@@ -286,7 +286,7 @@ generateTarmac : function() {
     //Starting tarmac strip
     this._tarmac.push(new Tarmac({
         loc : vec3(-5.5, -0.6, 2.5),
-        scale : vec3(12, 0.1, 6),
+        scale : vec3(40, 0.1, 6),
         color : vec4(0.2, 0.2, 0.2, 1.0)
     }));
 
@@ -295,7 +295,7 @@ generateTarmac : function() {
     //Finish line
     this._tarmac.push(new Tarmac({
         loc : vec3(-5.5, -0.6, 12.0),
-        scale : vec3(12, 0.1, 1),
+        scale : vec3(40, 0.1, 1),
         color : vec4(1/256, 116/256, 17/256, 1.0)
     }));
 
@@ -303,19 +303,19 @@ generateTarmac : function() {
     //spawn sidewalk
     this._tarmac.push(new Tarmac({
         loc : vec3(-5.5, -0.59, 0.0),
-        scale : vec3(12, 0.1, 1),
+        scale : vec3(40, 0.1, 1),
         color : vec4(117/256, 120/256, 123/256, 1.0)
     }));
     //river sidewalk
     this._tarmac.push(new Tarmac({
         loc : vec3(-5.5, -0.59, 5.0),
-        scale : vec3(12, 0.1, 1),
+        scale : vec3(40, 0.1, 1),
         color : vec4(117/256, 120/256, 123/256, 1.0)
     }));
 
     this._tarmac.push(new Tarmac({
         loc : vec3(-5.5, -0.6, -2.5),
-        scale : vec3(12, 0.1, 6),
+        scale : vec3(40, 0.1, 6),
         color : vec4(1/256, 116/256, 17/256, 1.0)
     }));
 },
